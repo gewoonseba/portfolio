@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-size: 62.5%;
+@layer base {
+  html {
+    @apply bg-neutral-900 text-neutral-100 font-normal;
+    font-size: 62.5%;
+  }
 }
-
-
-
