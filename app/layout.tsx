@@ -23,6 +23,8 @@ export default function RootLayout({
         <Navbar className="sticky top-0 z-50 w-full" />
         {children}
         <div className="h-[1000px]"></div>
+        {children}
+        <div className="h-[1000px]"></div>
         </body>
     </html>
   );

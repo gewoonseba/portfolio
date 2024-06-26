@@ -23,46 +23,52 @@ export default function Navbar({ className }: NavbarProps) {
     { path: "/photos", label: "Photos" },
   ] as NavLinks[];
   return (
-    <div className={classNames("p-4", className)}>
+    <nav
+      className={classNames(
+        "sticky top-0 z-50 m-4 flex h-14 w-[calc(100%-3.2rem)] justify-between overflow-hidden rounded-4 px-4 backdrop-blur-xl",
+        "animate-border-appear [animation-range:0px_100px] [animation-timeline:scroll()]",
+      )}
+    >
+      <div className="my-auto">
+        <Link href="/">
+          <LogoSmall />
+        </Link>
+      </div>
       <div
         className={classNames(
-          "rounded-4 px-4 backdrop-blur-xl",
-          "animate-border-appear",
-          "[animation-timeline:scroll()] [animation-range:0px_50px]"
+          "my-auto translate-y-8 opacity-0",
+          "md:visible md:translate-y-0 md:opacity-100",
+          "transition-[opacity, transform] duration-200",
         )}
       >
-        <nav className="flex h-14 flex-row content-center">
-          <div className="my-auto basis-1/3">
-            <Link href="/">
-              <LogoSmall />
-            </Link>
-          </div>
-          <div className="my-auto flex basis-1/3 justify-center">
-            {paths.map(({ path, label }) => (
-              <Link
-                key={path}
-                href={path}
-                className={clsx(
-                  "group relative p-5 uppercase transition-all duration-300 ease-out hover:text-neutral-100",
-                  { "text-neutral-200": pathname !== path },
-                  { "text-neutral-100": pathname === path },
-                )}
-              >
-                {label}
-                <span
-                  className={clsx(
-                    "h-0.5 absolute inset-x-5 top-[2.9rem] block max-w-0 bg-neutral-100 transition-all duration-300",
-                    { "max-w-full": pathname === path },
-                  )}
-                ></span>
-              </Link>
-            ))}
-          </div>
-          <div className="my-auto mr-0 flex basis-1/3 justify-end">
-            <ContactButton />
-          </div>
-        </nav>
+        {paths.map(({ path, label }) => (
+          <Link
+            key={path}
+            href={path}
+            className={clsx(
+              "group relative p-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+              { "text-neutral-200": pathname !== path },
+              { "text-neutral-100": pathname === path },
+            )}
+          >
+            {label}
+            <span
+              className={clsx(
+                "absolute inset-x-5 top-[2.9rem] block h-0.5 max-w-0 bg-neutral-100 transition-all duration-200",
+                { "max-w-full": pathname === path },
+              )}
+            ></span>
+          </Link>
+        ))}
       </div>
-    </div>
+      <div
+        className={classNames(
+          "translate-y-8 my-auto mr-0 opacity-0",
+          "md:translate-y-0 transition-[opacity, transform] duration-200 md:visible md:opacity-100",
+        )}
+      >
+        <ContactButton />
+      </div>
+    </nav>
   );
 }

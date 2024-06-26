@@ -66,8 +66,9 @@ const config: Config = {
     extend: {
       keyframes: {
         "border-appear": {
-          from: { "border": "solid 1px rgba(246, 245, 244, 0)" },
-          to: { "border": "solid 1px rgba(246, 245, 244, 0.03)" },
+          "0%": { "border": "solid 1px rgba(246, 245, 244, 0)" },
+          "60%, 65%": { "border": "solid 1px rgba(246, 245, 244, 0.05)" },
+          "100%": { "border": "solid 1px rgba(246, 245, 244, 0.03)" },
         },
       },
       animation: {
