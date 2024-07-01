@@ -5,7 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import classNames from "classnames";
-import ContactButton from "@/app/ui/contact-button";
+import { Menu } from "lucide-react";
+import { IconButton } from "@/app/ui/icon-button";
+import { ContactButton } from "@/app/ui/contact-button";
 
 export interface NavbarProps {
   className?: string;
@@ -25,8 +27,7 @@ export default function Navbar({ className }: NavbarProps) {
   return (
     <nav
       className={classNames(
-        "sticky top-0 z-50 m-4 flex h-14 w-[calc(100%-3.2rem)] justify-between overflow-hidden rounded-4 px-4 backdrop-blur-xl",
-        "animate-border-appear [animation-range:0px_100px] [animation-timeline:scroll()]",
+        "sticky top-0 z-50 flex h-14 w-full justify-between overflow-hidden px-4 backdrop-blur-md",
       )}
     >
       <div className="my-auto">
@@ -61,13 +62,20 @@ export default function Navbar({ className }: NavbarProps) {
           </Link>
         ))}
       </div>
+
       <div
         className={classNames(
-          "translate-y-8 my-auto mr-0 opacity-0",
-          "md:translate-y-0 transition-[opacity, transform] duration-200 md:visible md:opacity-100",
+          "my-auto mr-0 flex flex-col items-end justify-start overflow-visible h-10 pb-1",
+          "md:-translate-y-8 transition-transform duration-200",
         )}
       >
-        <ContactButton />
+        <IconButton
+          onClick={() => alert("Icon button clicked")}
+          className="md:invisible md:opacity-0 transition-opacity duration-200"
+        >
+          <Menu />
+        </IconButton>
+        <ContactButton className="invisible opacity-0 md:visible md:opacity-100 transition-opacity duration-200" />
       </div>
     </nav>
   );
