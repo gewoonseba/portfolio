@@ -25,9 +25,9 @@ export default function Navbar({ className }: NavbarProps) {
     { path: "/photos", label: "Photos" },
   ] as NavLinks[];
   return (
-    <nav
+    <div
       className={classNames(
-        "sticky top-0 z-50 flex h-14 w-full justify-between overflow-hidden px-4 backdrop-blur-md",
+        "sticky top-0 z-50 flex h-14 w-full items-center justify-between overflow-hidden px-4 backdrop-blur-md",
       )}
     >
       <div className="my-auto">
@@ -35,9 +35,10 @@ export default function Navbar({ className }: NavbarProps) {
           <LogoSmall />
         </Link>
       </div>
-      <div
+
+      <nav
         className={classNames(
-          "my-auto translate-y-8 opacity-0",
+          "translate-y-8 opacity-0",
           "md:visible md:translate-y-0 md:opacity-100",
           "transition-[opacity, transform] duration-200",
         )}
@@ -61,22 +62,20 @@ export default function Navbar({ className }: NavbarProps) {
             ></span>
           </Link>
         ))}
-      </div>
-
-      <div
+      </nav>
+      <ContactButton
         className={classNames(
-          "my-auto mr-0 flex flex-col items-end justify-start overflow-visible h-10 pb-1",
-          "md:-translate-y-8 transition-transform duration-200",
+          "translate-y-8 opacity-0",
+          "md:visible md:translate-y-0 md:opacity-100",
+          "transition-[opacity, transform] duration-200",
         )}
+      />
+      <IconButton
+        onClick={() => alert("Icon button clicked")}
+        className="transition-opacity duration-200 md:hidden md:opacity-0"
       >
-        <IconButton
-          onClick={() => alert("Icon button clicked")}
-          className="md:invisible md:opacity-0 transition-opacity duration-200"
-        >
-          <Menu />
-        </IconButton>
-        <ContactButton className="invisible opacity-0 md:visible md:opacity-100 transition-opacity duration-200" />
-      </div>
-    </nav>
+        <Menu />
+      </IconButton>
+    </div>
   );
 }
