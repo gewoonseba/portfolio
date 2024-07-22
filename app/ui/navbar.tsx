@@ -8,6 +8,7 @@ import classNames from "classnames";
 import { Menu } from "lucide-react";
 import { IconButton } from "@/app/ui/icon-button";
 import { ContactButton } from "@/app/ui/contact-button";
+import { useEffect, useState } from "react";
 
 export interface NavbarProps {
   className?: string;
@@ -24,58 +25,68 @@ export default function Navbar({ className }: NavbarProps) {
     { path: "/", label: "Design" },
     { path: "/photos", label: "Photos" },
   ] as NavLinks[];
-  return (
-    <div
-      className={classNames(
-        "sticky top-0 z-50 flex h-14 w-full items-center justify-between overflow-hidden px-4 backdrop-blur-md",
-      )}
-    >
-      <div className="my-auto">
-        <Link href="/">
-          <LogoSmall />
-        </Link>
-      </div>
 
-      <nav
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (html) html.classList.toggle("overflow-hidden", isMenuOpen);
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  return (
+    <div className="sticky top-0 z-50 p-2 h-18">
+      <div
         className={classNames(
-          "translate-y-8 opacity-0",
-          "md:visible md:translate-y-0 md:opacity-100",
-          "transition-[opacity, transform] duration-200",
+          "border-1 flex w-full items-start justify-between rounded-4 border border-neutral-100/5 px-4 py-2 backdrop-blur-md transition-all duration-300 ease-in-out",
+          isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
         )}
       >
-        {paths.map(({ path, label }) => (
-          <Link
-            key={path}
-            href={path}
-            className={clsx(
-              "group relative p-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
-              { "text-neutral-200": pathname !== path },
-              { "text-neutral-100": pathname === path },
-            )}
-          >
-            {label}
-            <span
-              className={clsx(
-                "absolute inset-x-5 top-[2.9rem] block h-0.5 max-w-0 bg-neutral-100 transition-all duration-200",
-                { "max-w-full": pathname === path },
-              )}
-            ></span>
+        <div className="h-10 flex items-center">
+          <Link href="/">
+            <LogoSmall />
           </Link>
-        ))}
-      </nav>
-      <ContactButton
-        className={classNames(
-          "translate-y-8 opacity-0",
-          "md:visible md:translate-y-0 md:opacity-100",
-          "transition-[opacity, transform] duration-200",
-        )}
-      />
-      <IconButton
-        onClick={() => alert("Icon button clicked")}
-        className="transition-opacity duration-200 md:hidden md:opacity-0"
-      >
-        <Menu />
-      </IconButton>
+        </div>
+        <nav
+          className={classNames(
+            "translate-y-8 opacity-0 [transition-behavior:allow-discrete] h-10 flex items-center",
+            "md:visible md:translate-y-0 md:opacity-100",
+            "transition-[opacity, transform] duration-200",
+            isMenuOpen ? "visible opacity-100" : "invisible opacity-0",
+          )}
+        >
+          {paths.map(({ path, label }) => (
+            <Link
+              key={path}
+              href={path}
+              className={clsx(
+                "relative p-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                { "text-neutral-200": pathname !== path },
+                { "text-neutral-100": pathname === path },
+              )}
+            >
+              {label}
+              <span
+                className={clsx(
+                  "absolute inset-x-5 top-[2.9rem] block h-0.5 max-w-0 bg-neutral-100 transition-all duration-200",
+                  { "max-w-full": pathname === path },
+                )}
+              ></span>
+            </Link>
+          ))}
+        </nav>
+        <ContactButton
+          className={classNames(
+            "hidden translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
+            "md:block md:translate-y-0 md:opacity-100",
+            "transition-[opacity, transform] duration-200",
+          )}
+        />
+        <IconButton onClick={() => toggleMenu()} className="block md:hidden">
+          <Menu />
+        </IconButton>
+      </div>
     </div>
   );
 }

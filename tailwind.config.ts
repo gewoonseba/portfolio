@@ -14,6 +14,7 @@ const config: Config = {
       base: ["1.6rem", "2.0rem"],
       lg: ["2.0rem", "2.8rem"],
       xl: ["2.8rem", "3.6rem"],
+      "2xl": ["3.6rem", "4.8rem"],
     },
     colors: {
       neutral: {
@@ -42,6 +43,10 @@ const config: Config = {
       14: "5.6rem",
       15: "6.0rem",
       16: "6.4rem",
+      17: "6.8rem",
+      18: "7.2rem",
+      19: "7.6rem",
+      20: "8.0rem",
     },
     borderRadius: {
       0: "0",
@@ -61,6 +66,8 @@ const config: Config = {
       14: "5.6rem",
       15: "6.0rem",
       16: "6.4rem",
+      17: "6.8rem",
+      18: "7.2rem",
       full: "9999px",
     },
     extend: {
