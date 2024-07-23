@@ -44,21 +44,21 @@ export default function Navbar({ className }: NavbarProps) {
     >
       <div
         className={classNames(
-          "box-content border-1 sticky top-0 z-50 flex w-full items-start justify-between rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
+          "border-1 sticky top-0 z-50 box-content flex w-full items-start justify-between overflow-hidden rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
         )}
       >
-        <div className="h-10 m-2 flex items-center">
+        <div className="m-2 flex h-10 items-center">
           <Link href="/">
             <LogoSmall />
           </Link>
         </div>
         <nav
           className={classNames(
-            "flex my-auto translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
-            "md:visible md:translate-y-0 md:opacity-100",
+            "my-auto flex translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
+            "md:block md:translate-y-0 md:opacity-100",
             "transition-[opacity, transform] duration-200",
-            isMenuOpen ? "visible opacity-100" : "invisible opacity-0",
+            isMenuOpen ? "block opacity-100" : "hidden opacity-0",
           )}
         >
           {paths.map(({ path, label }) => (
@@ -90,7 +90,7 @@ export default function Navbar({ className }: NavbarProps) {
         />
         <IconButton
           onClick={() => toggleMenu()}
-          className=" block border mt-2 mr-2 border-neutral-200 md:hidden"
+          className="mr-2 mt-2 block border border-neutral-200 md:hidden"
         >
           <Menu />
         </IconButton>
