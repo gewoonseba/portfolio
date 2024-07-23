@@ -55,10 +55,9 @@ export default function Navbar({ className }: NavbarProps) {
         </div>
         <nav
           className={classNames(
-            "my-auto flex translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
-            "md:block md:translate-y-0 md:opacity-100",
-            "transition-[opacity, transform] duration-200",
-            isMenuOpen ? "block opacity-100" : "hidden opacity-0",
+            "my-auto hidden translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
+            "md:flex md:translate-y-0 md:opacity-100",
+            "transition-[opacity, transform] duration-200"
           )}
         >
           {paths.map(({ path, label }) => (
