@@ -36,23 +36,26 @@ export default function Navbar({ className }: NavbarProps) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className={classNames("sticky top-0 z-50 pl-2 py-2 h-18 w-full",
-      isMenuOpen ? "pr-4" : "pr-2", //account for scrollbar dissapearing on menu open
-    )}>
+    <div
+      className={classNames(
+        "h-18 sticky top-0 z-50 w-full py-2 pl-2",
+        isMenuOpen ? "pr-4" : "pr-2", //account for scrollbar dissapearing on menu open
+      )}
+    >
       <div
         className={classNames(
-          " sticky top-0 z-50 border-1 flex w-full items-start justify-between rounded-4 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
+          "box-content border-1 sticky top-0 z-50 flex w-full items-start justify-between rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
         )}
       >
-        <div className="h-10 flex items-center">
+        <div className="h-10 m-2 flex items-center">
           <Link href="/">
             <LogoSmall />
           </Link>
         </div>
         <nav
           className={classNames(
-            "translate-y-8 opacity-0 [transition-behavior:allow-discrete] h-10 flex items-center",
+            "flex my-auto translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
             "md:visible md:translate-y-0 md:opacity-100",
             "transition-[opacity, transform] duration-200",
             isMenuOpen ? "visible opacity-100" : "invisible opacity-0",
@@ -63,7 +66,7 @@ export default function Navbar({ className }: NavbarProps) {
               key={path}
               href={path}
               className={clsx(
-                "relative p-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                "relative px-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
                 { "text-neutral-200": pathname !== path },
                 { "text-neutral-100": pathname === path },
               )}
@@ -71,7 +74,7 @@ export default function Navbar({ className }: NavbarProps) {
               {label}
               <span
                 className={clsx(
-                  "absolute inset-x-5 top-[2.9rem] block h-0.5 max-w-0 bg-neutral-100 transition-all duration-200",
+                  "absolute inset-x-5 top-[0.9rem] block h-0.5 max-w-0 bg-neutral-100 transition-all duration-200",
                   { "max-w-full": pathname === path },
                 )}
               ></span>
@@ -80,12 +83,15 @@ export default function Navbar({ className }: NavbarProps) {
         </nav>
         <ContactButton
           className={classNames(
-            "hidden translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
+            "my-auto mr-2 hidden translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
             "md:block md:translate-y-0 md:opacity-100",
             "transition-[opacity, transform] duration-200",
           )}
         />
-        <IconButton onClick={() => toggleMenu()} className="block md:hidden">
+        <IconButton
+          onClick={() => toggleMenu()}
+          className=" block border mt-2 mr-2 border-neutral-200 md:hidden"
+        >
           <Menu />
         </IconButton>
       </div>
