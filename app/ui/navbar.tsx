@@ -36,10 +36,12 @@ export default function Navbar({ className }: NavbarProps) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <div className="sticky top-0 z-50 p-2 h-18">
+    <div className={classNames("sticky top-0 z-50 pl-2 py-2 h-18 w-full",
+      isMenuOpen ? "pr-4" : "pr-2", //account for scrollbar dissapearing on menu open
+    )}>
       <div
         className={classNames(
-          "border-1 flex w-full items-start justify-between rounded-4 border border-neutral-100/5 px-4 py-2 backdrop-blur-md transition-all duration-300 ease-in-out",
+          " sticky top-0 z-50 border-1 flex w-full items-start justify-between rounded-4 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
         )}
       >

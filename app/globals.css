@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* width */
+::-webkit-scrollbar {
+  @apply w-2
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-neutral-900
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-100/30 rounded-full
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-100/40
+}
+
 @layer base {
   html {
     @apply bg-neutral-900 text-neutral-100 font-normal;
