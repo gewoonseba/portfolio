@@ -42,7 +42,7 @@ export default function Navbar({ className }: NavbarProps) {
     <div
       className={classNames(
         "sticky top-0 z-50 h-18 w-full py-2 pl-2",
-        ( isMenuOpen && currentDevice.isDesktop() )? "pr-4" : "pr-2", //account for scrollbar dissapearing on menu open
+        isMenuOpen && currentDevice.isDesktop() ? "pr-4" : "pr-2", //account for scrollbar dissapearing on menu open
       )}
     >
       <div
@@ -99,7 +99,34 @@ export default function Navbar({ className }: NavbarProps) {
           </IconButton>
         </div>
         <div className="flex md:hidden">
-          <p className="text-2xl">Mobile menu</p>
+          <nav
+            className={classNames(
+              "ml-2 mt-4 flex flex-col items-start [transition-behavior:allow-discrete]",
+              "md:hidden",
+            )}
+          >
+            {paths.map(({ path, label }) => (
+              <Link
+                key={path}
+                href={path}
+                onClick={() => toggleMenu()}
+                className={clsx(
+                  "relative pb-8 text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  { "text-neutral-200": pathname !== path },
+                  { "text-neutral-100": pathname === path },
+                )}
+              >
+                {label}
+                <span
+                  className={clsx(
+                    "absolute top-4 block h-[0.3rem] bg-neutral-100 transition-all duration-200",
+                    { "w-0": pathname !== path },
+                    { "w-full": pathname === path },
+                  )}
+                ></span>
+              </Link>
+            ))}
+          </nav>
         </div>
       </div>
     </div>
