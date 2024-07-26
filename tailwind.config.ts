@@ -1,3 +1,4 @@
+import plugin from "tailwindcss/plugin";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -73,9 +74,9 @@ const config: Config = {
     extend: {
       keyframes: {
         "border-appear": {
-          "0%": { "border": "solid 1px rgba(246, 245, 244, 0)" },
-          "60%, 65%": { "border": "solid 1px rgba(246, 245, 244, 0.05)" },
-          "100%": { "border": "solid 1px rgba(246, 245, 244, 0.03)" },
+          "0%": { border: "solid 1px rgba(246, 245, 244, 0)" },
+          "60%, 65%": { border: "solid 1px rgba(246, 245, 244, 0.05)" },
+          "100%": { border: "solid 1px rgba(246, 245, 244, 0.03)" },
         },
       },
       animation: {
@@ -83,6 +84,17 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    //adding in newer CSS features: https://www.youtube.com/watch?v=jCqtngrL2pA
+    plugin(({ addVariant, addUtilities }) => {
+      addVariant("starting", "@starting-style");
+
+      addUtilities({
+        ".transition-discrete": {
+          transitionBehavior: "allow-discrete",
+        },
+      });
+    }),
+  ],
 };
 export default config;

@@ -54,14 +54,14 @@ export default function Navbar({ className }: NavbarProps) {
         <div className="flex w-full justify-between">
           <div className="m-2 flex h-10 items-center">
             <Link href="/">
-              <LogoSmall className="h-6 md:h-7 transition-all duration-300" />
+              <LogoSmall className="h-6" />
             </Link>
           </div>
           <nav
             className={classNames(
-              "my-auto hidden translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
-              "md:flex md:translate-y-0 md:opacity-100",
-              "transition-[opacity, transform] duration-200",
+              "my-auto opacity-0 transition-discrete starting:opacity-0",
+              "md:flex md:opacity-100",
+              "transition-[display, opacity] duration-300",
             )}
           >
             {paths.map(({ path, label }) => (
@@ -86,8 +86,8 @@ export default function Navbar({ className }: NavbarProps) {
           </nav>
           <ContactButton
             className={classNames(
-              "my-auto mr-2 hidden translate-y-8 opacity-0 [transition-behavior:allow-discrete]",
-              "md:block md:translate-y-0 md:opacity-100",
+              "my-auto mr-2 hidden",
+              "md:block",
               "transition-[opacity, transform] duration-200",
             )}
           />
