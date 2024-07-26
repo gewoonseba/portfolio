@@ -54,7 +54,7 @@ export default function Navbar({ className }: NavbarProps) {
         <div className="flex w-full justify-between">
           <div className="m-2 flex h-10 items-center">
             <Link href="/">
-              <LogoSmall />
+              <LogoSmall className="h-6 md:h-7 transition-all duration-300" />
             </Link>
           </div>
           <nav

@@ -1,8 +1,12 @@
-export function LogoSmall() {
+interface LogoProps {
+  className?: string;
+}
+
+export function LogoSmall({ className }: LogoProps) {
   return (
     <svg
-      width="194"
-      height="25"
+    className={className}
+      width="auto"
       viewBox="0 0 194 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
