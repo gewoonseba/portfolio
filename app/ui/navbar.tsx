@@ -59,9 +59,9 @@ export default function Navbar({ className }: NavbarProps) {
           </div>
           <nav
             className={classNames(
-              "my-auto opacity-0 transition-discrete starting:opacity-0",
-              "md:flex md:opacity-100",
-              "transition-[display, opacity] duration-300",
+              "my-auto hidden  opacity-0 transition-discrete",
+              "md:flex starting:md:opacity-0 md:opacity-100",
+              "transition-[display, opacity, transform] duration-300",
             )}
           >
             {paths.map(({ path, label }) => (
