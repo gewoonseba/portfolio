@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import useDetectAgent from "@/app/util/mobile-detect";
 import { Instagram } from "@/app/icons/instagram";
 import { LinkedIn } from "@/app/icons/linkedin";
+import { MenuButton } from "@/app/ui/menu-button";
 
 export interface NavbarProps {
   className?: string;
@@ -106,9 +107,7 @@ export default function Navbar({ className }: NavbarProps) {
               "transition-[opacity, transform, display] duration-300 transition-discrete",
             )}
           >
-            <IconButton onClick={() => toggleMenu()}>
-              <Menu />
-            </IconButton>
+            <MenuButton onClick={() => toggleMenu()} isOpen={isMenuOpen} />
           </div>
           <ContactButton
             className={classNames(
@@ -119,14 +118,14 @@ export default function Navbar({ className }: NavbarProps) {
           />
         </div>
         <div className="flex w-full flex-grow flex-col justify-between py-4 pl-5 pr-2 md:hidden">
-          <nav className={classNames("mt-4 flex flex-col items-start")}>
+          <nav className={classNames("flex flex-col items-start gap-5")}>
             {paths.map(({ path, label }) => (
               <Link
                 key={path}
                 href={path}
                 onClick={() => toggleMenu()}
                 className={clsx(
-                  "relative mb-6 text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  "relative text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
                   { "text-neutral-200": pathname !== path },
                   { "text-neutral-100": pathname === path },
                 )}
