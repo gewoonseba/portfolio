@@ -71,18 +71,7 @@ const config: Config = {
       18: "7.2rem",
       full: "9999px",
     },
-    extend: {
-      keyframes: {
-        "border-appear": {
-          "0%": { border: "solid 1px rgba(246, 245, 244, 0)" },
-          "60%, 65%": { border: "solid 1px rgba(246, 245, 244, 0.05)" },
-          "100%": { border: "solid 1px rgba(246, 245, 244, 0.03)" },
-        },
-      },
-      animation: {
-        "border-appear": "border-appear linear forwards",
-      },
-    },
+    extend: {},
   },
   plugins: [
     //adding in newer CSS features: https://www.youtube.com/watch?v=jCqtngrL2pA

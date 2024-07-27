@@ -7,10 +7,12 @@ import clsx from "clsx";
 import classNames from "classnames";
 import { Menu } from "lucide-react";
 import { IconButton } from "@/app/ui/icon-button";
+import { IconLink } from "@/app/ui/icon-link";
 import { ContactButton } from "@/app/ui/contact-button";
 import { useEffect, useState } from "react";
 import useDetectAgent from "@/app/util/mobile-detect";
 import { Instagram } from "@/app/icons/instagram";
+import { LinkedIn } from "@/app/icons/linkedin";
 
 export interface NavbarProps {
   className?: string;
@@ -48,7 +50,7 @@ export default function Navbar({ className }: NavbarProps) {
     >
       <div
         className={classNames(
-          "border-1 sticky top-0 z-50 box-content w-full items-start justify-between overflow-hidden rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
+          "border-1 sticky top-0 z-50 box-content flex w-full flex-col items-start overflow-hidden rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
         )}
       >
@@ -104,7 +106,7 @@ export default function Navbar({ className }: NavbarProps) {
             )}
           />
         </div>
-        <div className="ml-5 flex flex-col md:hidden">
+        <div className="flex w-full flex-grow flex-col justify-between py-4 pl-5 pr-2 md:hidden">
           <nav className={classNames("mt-4 flex flex-col items-start")}>
             {paths.map(({ path, label }) => (
               <Link
@@ -128,12 +130,15 @@ export default function Navbar({ className }: NavbarProps) {
               </Link>
             ))}
           </nav>
-          <div className="flex">
+          <div className="flex items-center justify-between">
             <ContactButton />
-            <div>
-              <IconButton>
+            <div className="flex gap-1">
+              <IconLink href="https://www.instagram.com/gewoon.seba/">
                 <Instagram />
-              </IconButton>
+              </IconLink>
+              <IconLink href="https://www.linkedin.com/in/sebastian-stoelen-43b605b4/">
+                <LinkedIn />
+              </IconLink>
             </div>
           </div>
         </div>
