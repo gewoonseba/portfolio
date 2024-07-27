@@ -14,7 +14,7 @@ export const ContactButton = ({ className }: ContactButtonProps) => {
         className,
       )}
     >
-      <span className="inline-flex h-full items-center pb-0.5">Contact</span>
+      <span className="inline-flex h-full items-center">Contact</span>
     </Link>
   );
 };

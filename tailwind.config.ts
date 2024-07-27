@@ -2,6 +2,9 @@ import plugin from "tailwindcss/plugin";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -71,7 +74,11 @@ const config: Config = {
       18: "7.2rem",
       full: "9999px",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        border: "0 0 0 1px #fff",
+      },
+    },
   },
   plugins: [
     //adding in newer CSS features: https://www.youtube.com/watch?v=jCqtngrL2pA

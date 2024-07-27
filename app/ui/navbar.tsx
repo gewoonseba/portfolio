@@ -32,26 +32,38 @@ export default function Navbar({ className }: NavbarProps) {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const currentDevice = useDetectAgent();
+
   useEffect(() => {
     const html = document.querySelector("html");
     if (html) html.classList.toggle("overflow-hidden", isMenuOpen);
   }, [isMenuOpen]);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  useEffect(() => {
+    const closeMenu = () => setIsMenuOpen(false);
 
-  const currentDevice = useDetectAgent();
+    window.addEventListener("orientationchange", closeMenu);
+    window.addEventListener("resize", closeMenu);
+
+    return () => {
+      window.removeEventListener("orientationchange", closeMenu);
+      window.removeEventListener("resize", closeMenu);
+    };
+  }, [setIsMenuOpen]);
 
   return (
     <div
       className={classNames(
-        "sticky top-0 z-50 h-18 w-full py-2 pl-2",
-        isMenuOpen && currentDevice.isDesktop() ? "pr-4" : "pr-2", //account for scrollbar dissapearing on menu open
+        "sticky top-0 z-50 h-18 py-2",
+        isMenuOpen && currentDevice.isDesktop() ? "pr-2" : "pr-0", //account for scrollbar dissapearing on menu open
       )}
     >
       <div
         className={classNames(
-          "border-1 sticky top-0 z-50 box-content flex w-full flex-col items-start overflow-hidden rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
-          isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
+          "shadow-border sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
+          isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-full",
         )}
       >
         <div className="flex h-14 w-full justify-between">
