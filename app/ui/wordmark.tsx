@@ -2,11 +2,12 @@ interface LogoProps {
   className?: string;
 }
 
-export function LogoSmall({ className }: LogoProps) {
+export function WordMark({ className }: LogoProps) {
   return (
     <svg
     className={className}
       width="auto"
+      height="1.9rem"
       viewBox="0 0 194 25"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

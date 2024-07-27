@@ -1,6 +1,6 @@
 "use client";
 
-import { LogoSmall } from "@/app/ui/logo-small";
+import { WordMark } from "@/app/ui/wordmark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -10,6 +10,7 @@ import { IconButton } from "@/app/ui/icon-button";
 import { ContactButton } from "@/app/ui/contact-button";
 import { useEffect, useState } from "react";
 import useDetectAgent from "@/app/util/mobile-detect";
+import { Instagram } from "@/app/icons/instagram";
 
 export interface NavbarProps {
   className?: string;
@@ -51,16 +52,16 @@ export default function Navbar({ className }: NavbarProps) {
           isMenuOpen ? "h-[calc(100vh-2rem)]" : "h-full",
         )}
       >
-        <div className="flex w-full justify-between">
-          <div className="m-2 flex h-10 items-center">
+        <div className="flex h-14 w-full justify-between">
+          <div className="ml-5 mt-2 flex h-10 items-center">
             <Link href="/">
-              <LogoSmall className="h-6" />
+              <WordMark className="pr-10 md:pr-0" />
             </Link>
           </div>
           <nav
             className={classNames(
-              "my-auto hidden  opacity-0 transition-discrete",
-              "md:flex starting:md:opacity-0 md:opacity-100",
+              "my-auto hidden translate-y-8 opacity-0 transition-discrete",
+              "md:flex md:translate-y-0 md:opacity-100 md:starting:translate-y-8 md:starting:opacity-0",
               "transition-[display, opacity, transform] duration-300",
             )}
           >
@@ -84,34 +85,34 @@ export default function Navbar({ className }: NavbarProps) {
               </Link>
             ))}
           </nav>
+          <div
+            className={classNames(
+              "absolute right-2 top-2 block translate-y-0 opacity-100",
+              "md:hidde md:-translate-y-8 md:opacity-0 md:starting:translate-y-0 md:starting:opacity-100",
+              "transition-[opacity, transform, display] duration-300 transition-discrete",
+            )}
+          >
+            <IconButton onClick={() => toggleMenu()}>
+              <Menu />
+            </IconButton>
+          </div>
           <ContactButton
             className={classNames(
-              "my-auto mr-2 hidden",
-              "md:block",
-              "transition-[opacity, transform] duration-200",
+              "my-auto mr-5 hidden translate-y-8 opacity-0",
+              "md:block md:translate-y-0 md:opacity-100 md:starting:translate-y-8 md:starting:opacity-0",
+              "transition-[opacity, transform, display] duration-300 transition-discrete",
             )}
           />
-          <IconButton
-            onClick={() => toggleMenu()}
-            className="mr-2 mt-2 block border border-neutral-200 md:hidden"
-          >
-            <Menu />
-          </IconButton>
         </div>
-        <div className="flex md:hidden">
-          <nav
-            className={classNames(
-              "ml-2 mt-4 flex flex-col items-start [transition-behavior:allow-discrete]",
-              "md:hidden",
-            )}
-          >
+        <div className="ml-5 flex flex-col md:hidden">
+          <nav className={classNames("mt-4 flex flex-col items-start")}>
             {paths.map(({ path, label }) => (
               <Link
                 key={path}
                 href={path}
                 onClick={() => toggleMenu()}
                 className={clsx(
-                  "relative pb-8 text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  "relative mb-6 text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
                   { "text-neutral-200": pathname !== path },
                   { "text-neutral-100": pathname === path },
                 )}
@@ -127,6 +128,14 @@ export default function Navbar({ className }: NavbarProps) {
               </Link>
             ))}
           </nav>
+          <div className="flex">
+            <ContactButton />
+            <div>
+              <IconButton>
+                <Instagram />
+              </IconButton>
+            </div>
+          </div>
         </div>
       </div>
     </div>
