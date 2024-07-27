@@ -3,10 +3,7 @@
 import { WordMark } from "@/app/ui/wordmark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 import classNames from "classnames";
-import { Menu } from "lucide-react";
-import { IconButton } from "@/app/ui/icon-button";
 import { IconLink } from "@/app/ui/icon-link";
 import { ContactButton } from "@/app/ui/contact-button";
 import { useEffect, useState } from "react";
@@ -84,17 +81,16 @@ export default function Navbar({ className }: NavbarProps) {
               <Link
                 key={path}
                 href={path}
-                className={clsx(
+                className={classNames(
                   "relative px-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
-                  { "text-neutral-200": pathname !== path },
-                  { "text-neutral-100": pathname === path },
+                  pathname === path ? "text-neutral-100" : "text-neutral-200",
                 )}
               >
                 {label}
                 <span
-                  className={clsx(
-                    "absolute inset-x-5 top-[0.9rem] block h-0.5 max-w-0 bg-neutral-100 transition-all duration-200",
-                    { "max-w-full": pathname === path },
+                  className={classNames(
+                    "absolute inset-x-5 top-[0.9rem] block h-0.5 bg-neutral-100 transition-all duration-200",
+                    pathname === path ? "max-w-full" : "max-w-0",
                   )}
                 ></span>
               </Link>
@@ -120,8 +116,8 @@ export default function Navbar({ className }: NavbarProps) {
         <div
           className={classNames(
             "flex w-full flex-grow flex-col justify-between py-4 pl-5 pr-2",
-            // "md:hidden md:starting:flex",
-            // "transition-[display] duration-300 transition-discrete",
+            "md:hidden md:starting:flex",
+            "transition-[display] duration-300 transition-discrete",
           )}
         >
           <nav className={classNames("flex flex-col items-start gap-5")}>
@@ -130,24 +126,30 @@ export default function Navbar({ className }: NavbarProps) {
                 key={path}
                 href={path}
                 onClick={() => toggleMenu()}
-                className={clsx(
+                className={classNames(
                   "relative text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
-                  { "text-neutral-200": pathname !== path },
-                  { "text-neutral-100": pathname === path },
+                  pathname === path ? "text-neutral-100" : "text-neutral-200",
+                  isMenuOpen
+                    ? "translate-y-0 opacity-100 blur-0"
+                    : "-translate-y-8 opacity-0 blur-md",
                 )}
               >
                 {label}
                 <span
-                  className={clsx(
-                    "absolute top-4 block h-[0.3rem] bg-neutral-100 transition-all duration-200",
-                    { "w-0": pathname !== path },
-                    { "w-full": pathname === path },
+                  className={classNames(
+                    "absolute top-4 block h-[0.3rem] bg-neutral-100",
+                    pathname === path ? "w-full" : "w-0",
                   )}
                 ></span>
               </Link>
             ))}
           </nav>
-          <div className="flex items-center justify-between">
+          <div
+            className={classNames(
+              "flex items-center justify-between transition-all duration-200",
+              isMenuOpen ? "opacity-100 blur-0" : "opacity-0 blur-md",
+            )}
+          >
             <ContactButton />
             <div className="flex gap-1">
               <IconLink href="https://www.instagram.com/gewoon.seba/">
