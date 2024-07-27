@@ -1,3 +1,3 @@
 export default function Design() {
-    return <div>Design</div>;
+  return <div>Design</div>;
 }

@@ -28,24 +28,24 @@ export const MenuButton = ({ onClick, isOpen }: MenuButtonProps) => {
             y1="12"
             x2="22"
             y2="12"
-            stroke="#F6F5F4"
+            stroke="currentColor"
             strokeWidth="2"
             className={`transition-all duration-300 ease-in-out ${
               isOpen ? "rotate-45" : "-translate-y-1"
             }`}
-            transform-origin="center"
+            style={{ transformOrigin: "center" }}
           />
           <line
             x1="2"
             y1="12"
             x2="22"
             y2="12"
-            stroke="#F6F5F4"
+            stroke="currentColor"
             strokeWidth="2"
             className={`transition-all duration-300 ease-in-out ${
               isOpen ? "-rotate-45" : "translate-y-1"
             }`}
-            transform-origin="center"
+            style={{ transformOrigin: "center" }}
           />
         </g>
       </svg>

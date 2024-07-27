@@ -15,7 +15,7 @@ export const IconButton = ({
   return (
     <button
       className={classNames(
-        "size-10 rounded-2 shrink-0 flex items-center justify-center transition-colors duration-150 hover:bg-neutral-800",
+        "flex size-10 shrink-0 items-center justify-center rounded-2 transition-colors duration-150 hover:bg-neutral-800 active:bg-neutral-800",
         className,
       )}
       onClick={onClick}

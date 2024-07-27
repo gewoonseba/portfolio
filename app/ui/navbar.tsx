@@ -63,11 +63,11 @@ export default function Navbar({ className }: NavbarProps) {
     >
       <div
         className={classNames(
-          "shadow-border sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 border border-neutral-100 backdrop-blur-md transition-all duration-300 ease-in-out",
-          isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-full",
+          "shadow-border sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 backdrop-blur-md transition-all duration-300 ease-in-out",
+          isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-14",
         )}
       >
-        <div className="flex h-14 w-full justify-between">
+        <div className="flex h-14 w-full shrink-0 justify-between">
           <div className="ml-5 mt-2 flex h-10 items-center">
             <Link href="/">
               <WordMark className="pr-10 md:pr-0" />
@@ -75,9 +75,9 @@ export default function Navbar({ className }: NavbarProps) {
           </div>
           <nav
             className={classNames(
-              "my-auto hidden translate-y-8 opacity-0 transition-discrete",
-              "md:flex md:translate-y-0 md:opacity-100 md:starting:translate-y-8 md:starting:opacity-0",
-              "transition-[display, opacity, transform] duration-300",
+              "my-auto hidden translate-y-8 opacity-0 blur-md transition-discrete",
+              "md:flex md:translate-y-0 md:opacity-100 md:blur-0 md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
+              "transition-[display, opacity, transform, blur] duration-300",
             )}
           >
             {paths.map(({ path, label }) => (
@@ -102,22 +102,28 @@ export default function Navbar({ className }: NavbarProps) {
           </nav>
           <div
             className={classNames(
-              "absolute right-2 top-2 block translate-y-0 opacity-100",
-              "md:hidde md:-translate-y-8 md:opacity-0 md:starting:translate-y-0 md:starting:opacity-100",
-              "transition-[opacity, transform, display] duration-300 transition-discrete",
+              "absolute right-2 top-2 block translate-y-0 opacity-100 blur-0",
+              "md:hidden md:-translate-y-8 md:opacity-0 md:blur-md md:starting:block md:starting:-translate-y-8 md:starting:opacity-100 md:starting:blur-md",
+              "transition-[opacity, transform, display, blur] duration-300 transition-discrete",
             )}
           >
             <MenuButton onClick={() => toggleMenu()} isOpen={isMenuOpen} />
           </div>
           <ContactButton
             className={classNames(
-              "my-auto mr-5 hidden translate-y-8 opacity-0",
-              "md:block md:translate-y-0 md:opacity-100 md:starting:translate-y-8 md:starting:opacity-0",
+              "my-auto mr-5 hidden translate-y-8 opacity-0 blur-md",
+              "md:block md:translate-y-0 md:opacity-100 md:blur-0 md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
               "transition-[opacity, transform, display] duration-300 transition-discrete",
             )}
           />
         </div>
-        <div className="flex w-full flex-grow flex-col justify-between py-4 pl-5 pr-2 md:hidden">
+        <div
+          className={classNames(
+            "flex w-full flex-grow flex-col justify-between py-4 pl-5 pr-2",
+            // "md:hidden md:starting:flex",
+            // "transition-[display] duration-300 transition-discrete",
+          )}
+        >
           <nav className={classNames("flex flex-col items-start gap-5")}>
             {paths.map(({ path, label }) => (
               <Link
