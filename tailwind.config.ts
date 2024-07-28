@@ -76,7 +76,7 @@ const config: Config = {
     },
     extend: {
       boxShadow: {
-        border: "0 0 0 1px #fff",
+        border: "0 0 0 1px rgba(246, 245, 244, 0.1)",
       },
     },
   },

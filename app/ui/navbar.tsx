@@ -31,6 +31,7 @@ export default function Navbar({ className }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const currentDevice = useDetectAgent();
 
@@ -40,8 +41,6 @@ export default function Navbar({ className }: NavbarProps) {
   }, [isMenuOpen]);
 
   useEffect(() => {
-    const closeMenu = () => setIsMenuOpen(false);
-
     window.addEventListener("orientationchange", closeMenu);
     window.addEventListener("resize", closeMenu);
 
@@ -49,7 +48,7 @@ export default function Navbar({ className }: NavbarProps) {
       window.removeEventListener("orientationchange", closeMenu);
       window.removeEventListener("resize", closeMenu);
     };
-  }, [setIsMenuOpen]);
+  }, [closeMenu]);
 
   return (
     <div
@@ -60,13 +59,13 @@ export default function Navbar({ className }: NavbarProps) {
     >
       <div
         className={classNames(
-          "shadow-border sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 backdrop-blur-md transition-all duration-300 ease-in-out",
+          "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 shadow-border backdrop-blur-md transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-14",
         )}
       >
         <div className="flex h-14 w-full shrink-0 justify-between">
           <div className="ml-5 mt-2 flex h-10 items-center">
-            <Link href="/">
+            <Link href="/" onClick={closeMenu}>
               <WordMark className="pr-10 md:pr-0" />
             </Link>
           </div>
