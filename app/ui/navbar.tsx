@@ -51,7 +51,7 @@ export default function Navbar({ className }: NavbarProps) {
   }, [closeMenu]);
 
   return (
-    <div
+    <header
       className={classNames(
         "sticky top-0 z-50 h-18 py-2",
         isMenuOpen && currentDevice.isDesktop() ? "pr-2" : "pr-0", //account for scrollbar dissapearing on menu open
@@ -97,9 +97,9 @@ export default function Navbar({ className }: NavbarProps) {
           </nav>
           <div
             className={classNames(
-              "absolute right-2 top-2 block translate-y-0 opacity-100 blur-0",
-              "md:hidden md:-translate-y-8 md:opacity-0 md:blur-md md:starting:block md:starting:-translate-y-8 md:starting:opacity-100 md:starting:blur-md",
-              "transition-[opacity, transform, display, blur] duration-300 transition-discrete",
+              "absolute right-2 top-2 block translate-y-0 opacity-100 blur-0 starting:-translate-y-8 starting:opacity-0 starting:blur-md",
+              "md:hidden md:-translate-y-8 md:opacity-0 md:blur-md",
+              "transition-[transform, display] duration-300 transition-discrete",
             )}
           >
             <MenuButton onClick={() => toggleMenu()} isOpen={isMenuOpen} />
@@ -161,6 +161,6 @@ export default function Navbar({ className }: NavbarProps) {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
