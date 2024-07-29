@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <body className="px-2 text-base 2xl:container md:px-5 2xl:mx-auto">
+      <body className="max-w-[204.8rem] px-2 text-base md:px-5 2xl:mx-auto">
         <Navbar />
         {children}
         <div className="h-[1000px]"></div>

@@ -4,27 +4,49 @@
 
 /* width */
 ::-webkit-scrollbar {
-  @apply w-2
+  @apply w-2;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-neutral-900
+  @apply bg-neutral-900;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-neutral-100/30 rounded-full
+  @apply rounded-full bg-neutral-100/30;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neutral-100/40
+  @apply bg-neutral-100/40;
 }
 
 @layer base {
   html {
-    @apply bg-neutral-900 text-neutral-100 font-normal;
+    @apply bg-neutral-900 font-normal text-neutral-100;
     font-size: 62.5%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply text-neutral-100;
+  }
+
+  h1 {
+    @apply text-huge text-center font-semibold leading-none tracking-tighter;
+  }
+
+  h2 {
+    @apply text-base uppercase tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply text-md text-neutral-200;
   }
 }

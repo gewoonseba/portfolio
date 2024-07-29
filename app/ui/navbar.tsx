@@ -59,7 +59,7 @@ export default function Navbar({ className }: NavbarProps) {
     >
       <div
         className={classNames(
-          "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 shadow-border backdrop-blur-md transition-all duration-300 ease-in-out",
+          "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 bg-neutral-900/30 shadow-border backdrop-blur-xl transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-14",
         )}
       >
@@ -136,7 +136,7 @@ export default function Navbar({ className }: NavbarProps) {
                 {label}
                 <span
                   className={classNames(
-                    "absolute top-4 block h-[0.3rem] bg-neutral-100",
+                    "absolute top-3 block h-[0.3rem] bg-neutral-100",
                     pathname === path ? "w-full" : "w-0",
                   )}
                 ></span>

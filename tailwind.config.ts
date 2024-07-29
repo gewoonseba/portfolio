@@ -15,10 +15,10 @@ const config: Config = {
       sans: ["var(--main-font)"],
     },
     fontSize: {
-      base: ["1.6rem", "2.0rem"],
-      lg: ["2.0rem", "2.8rem"],
-      xl: ["2.8rem", "3.6rem"],
-      "2xl": ["3.6rem", "4.8rem"],
+      base: ["clamp(1.4rem, 0.233vw + 1.325rem, 1.8rem)", "1.2"],
+      md: ["clamp(1.6rem, 0.233vw + 1.525rem, 2rem)", "1.2"],
+      xl: ["clamp(2.2rem, 0.466vw + 2.051rem, 3rem)", "1.2"],
+      huge: ["clamp(3.2rem, 14.6vw, 31rem)", "1.2"],
     },
     colors: {
       neutral: {
