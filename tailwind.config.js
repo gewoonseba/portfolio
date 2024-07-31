@@ -1,9 +1,8 @@
 import plugin from "tailwindcss/plugin";
-import fluid, { extract, FluidThemeConfig } from "fluid-tailwind";
+import fluid, { extract, screens } from "fluid-tailwind";
 
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+const config = {
   future: {
     hoverOnlyWhenSupported: true,
   },
@@ -16,8 +15,13 @@ const config: Config = {
     extract,
   },
   theme: {
-    fluid: () => ({
-      defaultScreens: ["32rem", "204.8rem"],
+    screens: {
+      ...screens,
+      xs: "32rem",
+      "3xl": "204.8rem",
+    },
+    fluid: ({ theme }) => ({
+      defaultScreens: [theme("screens.xs"), theme("screens.3xl")],
     }),
     fontSize: {
       sm: ["1.4rem", "1.6rem"],
