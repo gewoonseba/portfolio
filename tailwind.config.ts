@@ -1,23 +1,30 @@
 import plugin from "tailwindcss/plugin";
+import fluid, { extract, FluidThemeConfig } from "fluid-tailwind";
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: {
+    files: [
+      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    extract,
+  },
   theme: {
-    fontFamily: {
-      sans: ["var(--main-font)"],
-    },
+    fluid: () => ({
+      defaultScreens: ["32rem", "204.8rem"],
+    }),
     fontSize: {
-      base: ["clamp(1.4rem, 0.233vw + 1.325rem, 1.8rem)", "1.2"],
-      md: ["clamp(1.6rem, 0.233vw + 1.525rem, 2rem)", "1.2"],
-      xl: ["clamp(2.2rem, 0.466vw + 2.051rem, 3rem)", "1.2"],
+      sm: ["1.4rem", "1.6rem"],
+      base: ["1.6rem", "2rem"],
+      md: ["2rem", "2.4rem"],
+      lg: ["2.4rem", "2.8rem"],
+      xl: ["2.8rem", "3.2rem"],
       huge: ["clamp(3.2rem, 14.6vw, 31rem)", "1.2"],
     },
     colors: {
@@ -81,6 +88,7 @@ const config: Config = {
     },
   },
   plugins: [
+    fluid,
     //adding in newer CSS features: https://www.youtube.com/watch?v=jCqtngrL2pA
     plugin(({ addVariant, addUtilities }) => {
       addVariant("starting", "@starting-style");

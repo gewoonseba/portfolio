@@ -81,7 +81,7 @@ export default function Navbar({ className }: NavbarProps) {
                 key={path}
                 href={path}
                 className={classNames(
-                  "relative px-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  "~text-base/md relative px-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
                   pathname === path ? "text-neutral-100" : "text-neutral-200",
                 )}
               >
@@ -126,7 +126,7 @@ export default function Navbar({ className }: NavbarProps) {
                 href={path}
                 onClick={() => toggleMenu()}
                 className={classNames(
-                  "relative text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  "text-xl relative uppercase transition-all duration-200 ease-out hover:text-neutral-100",
                   pathname === path ? "text-neutral-100" : "text-neutral-200",
                   isMenuOpen
                     ? "translate-y-0 opacity-100 blur-0"
@@ -136,7 +136,7 @@ export default function Navbar({ className }: NavbarProps) {
                 {label}
                 <span
                   className={classNames(
-                    "absolute top-3 block h-[0.3rem] bg-neutral-100",
+                    "absolute top-4 block h-[0.3rem] bg-neutral-100",
                     pathname === path ? "w-full" : "w-0",
                   )}
                 ></span>

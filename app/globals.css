@@ -39,14 +39,14 @@
   }
 
   h2 {
-    @apply text-base uppercase tracking-tight;
+    @apply ~text-sm/base uppercase tracking-tight;
   }
 
   h3 {
-    @apply text-xl font-semibold tracking-tight;
+    @apply ~text-lg/xl font-semibold tracking-tight;
   }
 
   p {
-    @apply text-md text-neutral-200;
+    @apply ~text-base/md text-neutral-200;
   }
 }

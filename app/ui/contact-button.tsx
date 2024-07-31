@@ -10,7 +10,7 @@ export const ContactButton = ({ className }: ContactButtonProps) => {
     <Link
       href="mailto:gewoonseba@gmail.com?subject=Hi%20👋"
       className={classNames(
-        "text-md h-8 rounded-full border border-neutral-100 px-2 text-center align-middle transition-all hover:bg-neutral-100 hover:text-neutral-900 active:bg-neutral-100 active:text-neutral-900",
+        "~text-base/md h-8 rounded-full border border-neutral-100 px-2 text-center align-middle transition-all hover:bg-neutral-100 hover:text-neutral-900 active:bg-neutral-100 active:text-neutral-900",
         className,
       )}
     >
