@@ -1,17 +1,17 @@
+import { LinkRow } from "@/app/ui/link-row";
+
 export default function Design() {
   return (
     <div>
       <h1>Gewoon Seba.</h1>
-      <h2>Coming soon</h2>
-      <h3>Testing styles</h3>
       <p className="max-w-prose">
-        Proident cupidatat do nulla amet id incididunt dolore cupidatat
-        occaecat. Ipsum enim nisi do commodo esse irure deserunt commodo.
-        Occaecat enim ipsum tempor nisi occaecat esse in non consectetur sit
-        cillum ex est amet minim. Sunt sit magna nisi magna sunt laborum ipsum
-        tempor adipisicing qui aliqua voluptate exercitation nisi. Sunt
-        consectetur labore amet commodo anim sit veniam dolor ipsum adipisicing.
+        Hi, I'm Seba! An allround Product Designer with expertise in viusal and
+        interaction design, product management and engineering. Nice to meet
+        you!
       </p>
+      <LinkRow header="test" byline="byline">
+        <p className="uppercase">Linky boy</p>
+      </LinkRow>
     </div>
   );
 }

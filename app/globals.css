@@ -35,18 +35,18 @@
   }
 
   h1 {
-    @apply text-huge text-center font-semibold leading-none tracking-tighter;
+    @apply text-huge font-semibold leading-none tracking-tighter ~-ml-0/4;
   }
 
   h2 {
-    @apply ~text-sm/base uppercase tracking-tight;
+    @apply uppercase tracking-tight ~text-sm/base;
   }
 
   h3 {
-    @apply ~text-lg/xl font-semibold tracking-tight;
+    @apply font-semibold tracking-tight ~text-lg/xl;
   }
 
   p {
-    @apply ~text-base/md text-neutral-200;
+    @apply text-neutral-200 ~text-base/md;
   }
 }
