@@ -35,7 +35,7 @@
   }
 
   h1 {
-    @apply text-huge font-semibold leading-none tracking-tighter ~-ml-0/4;
+    @apply text-huge font-semibold leading-none tracking-tighter ~-ml-0/4 [text-align-last:justify];
   }
 
   h2 {

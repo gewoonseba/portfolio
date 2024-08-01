@@ -15,13 +15,9 @@ const config = {
     extract,
   },
   theme: {
-    screens: {
-      ...screens,
-      xs: "32rem",
-      "3xl": "204.8rem",
-    },
     fluid: ({ theme }) => ({
-      defaultScreens: [theme("screens.xs"), theme("screens.3xl")],
+      //impossible to use theme screens here, because of inconsitencies in how they handle the 62.5% font size in media queries vs in the DOM
+      defaultScreens: ["32rem", "204.8rem"],
     }),
     fontSize: {
       sm: ["1.4rem", "1.6rem"],
@@ -29,7 +25,7 @@ const config = {
       md: ["2rem", "2.4rem"],
       lg: ["2.4rem", "2.8rem"],
       xl: ["2.8rem", "3.2rem"],
-      huge: ["clamp(5rem, 16.8vw + -0.481rem, 34.6rem)", "1"],
+      huge: ["clamp(5rem, 17.2vw + -0.5rem, 34.6rem)", "1"],
     },
     colors: {
       neutral: {
@@ -86,6 +82,9 @@ const config = {
       full: "9999px",
     },
     extend: {
+      screens: {
+        "3xl": "2048px",
+      },
       boxShadow: {
         border: "0 0 0 1px rgba(246, 245, 244, 0.1)",
       },
