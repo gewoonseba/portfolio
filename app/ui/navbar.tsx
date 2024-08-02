@@ -11,6 +11,7 @@ import useDetectAgent from "@/app/util/mobile-detect";
 import { Instagram } from "@/app/ui/icons/instagram";
 import { LinkedIn } from "@/app/ui/icons/linkedin";
 import { MenuButton } from "@/app/ui/button/menu-button";
+import { ReadCV } from "@/app/ui/icons/readcv";
 
 export interface NavbarProps {
   className?: string;
@@ -153,6 +154,9 @@ export default function Navbar({ className }: NavbarProps) {
             <div className="flex gap-1">
               <IconLink href="https://www.instagram.com/gewoon.seba/">
                 <Instagram />
+              </IconLink>
+              <IconLink href="https://read.cv/gewoon.seba">
+                <ReadCV />
               </IconLink>
               <IconLink href="https://www.linkedin.com/in/sebastian-stoelen-43b605b4/">
                 <LinkedIn />
