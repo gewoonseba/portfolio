@@ -1,4 +1,4 @@
-import { IconButton } from "@/app/ui/icon-button";
+import { IconButton } from "@/app/ui/button/icon-button";
 
 interface MenuButtonProps {
   onClick?: () => void;

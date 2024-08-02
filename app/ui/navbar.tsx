@@ -4,13 +4,13 @@ import { WordMark } from "@/app/ui/wordmark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
-import { IconLink } from "@/app/ui/icon-link";
-import { ContactButton } from "@/app/ui/contact-button";
+import { IconLink } from "@/app/ui/button/icon-link";
+import { ContactButton } from "@/app/ui/button/contact-button";
 import { useEffect, useState } from "react";
 import useDetectAgent from "@/app/util/mobile-detect";
-import { Instagram } from "@/app/icons/instagram";
-import { LinkedIn } from "@/app/icons/linkedin";
-import { MenuButton } from "@/app/ui/menu-button";
+import { Instagram } from "@/app/ui/icons/instagram";
+import { LinkedIn } from "@/app/ui/icons/linkedin";
+import { MenuButton } from "@/app/ui/button/menu-button";
 
 export interface NavbarProps {
   className?: string;
@@ -81,7 +81,7 @@ export default function Navbar({ className }: NavbarProps) {
                 key={path}
                 href={path}
                 className={classNames(
-                  "~text-base/md relative px-5 uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  "relative px-5 uppercase transition-all duration-200 ease-out ~text-base/md hover:text-neutral-100",
                   pathname === path ? "text-neutral-100" : "text-neutral-200",
                 )}
               >
@@ -126,7 +126,7 @@ export default function Navbar({ className }: NavbarProps) {
                 href={path}
                 onClick={() => toggleMenu()}
                 className={classNames(
-                  "text-xl relative uppercase transition-all duration-200 ease-out hover:text-neutral-100",
+                  "relative text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
                   pathname === path ? "text-neutral-100" : "text-neutral-200",
                   isMenuOpen
                     ? "translate-y-0 opacity-100 blur-0"
