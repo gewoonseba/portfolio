@@ -18,7 +18,7 @@ export function ReadCV({ size = 24, className = "" }: IconProps) {
       <g
         id="icon-/-readcv"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
         fillRule="evenodd"
       >

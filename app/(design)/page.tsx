@@ -25,13 +25,44 @@ export default function Design() {
       <section className="~py-4/10">
         <h2 className="pb-4">Experience</h2>
         <LinkRow className="border-t" header="Head of Product" byline="Smooved">
-          <p className="uppercase text-neutral-100">current</p>
+          <span className="uppercase text-neutral-100">current</span>
         </LinkRow>
         <LinkRow header="Product Designer" byline="In The Pocket">
-          <p className="uppercase text-neutral-100">2021 - 2023</p>
+          <span className="uppercase text-neutral-100">2021 - 2023</span>
         </LinkRow>
         <LinkRow header="Full stack engineer" byline="AE">
-          <p className="uppercase text-neutral-100">2017 - 2021</p>
+          <span className="uppercase text-neutral-100">2017 - 2021</span>
+        </LinkRow>
+      </section>
+      <section className="~py-4/10">
+        <h2 className="pb-4">Projects</h2>
+        <LinkRow
+          className="border-t"
+          header="Fednot Izimi"
+          byline="Digital Product Design"
+        >
+          <Link
+            href="https://www.inthepocket.com/work/izimi"
+            className="uppercase text-neutral-100 transition-all duration-150 hover:text-neutral-100 hover:underline"
+          >
+            inthepocket.com ↗
+          </Link>
+        </LinkRow>
+        <LinkRow header="TP Vision Wave" byline="Digital Product Design">
+          <Link
+            href="https://www.inthepocket.com/work/tp-vision"
+            className="uppercase text-neutral-100 transition-all duration-150 hover:text-neutral-100 hover:underline"
+          >
+            inthepocket.com ↗
+          </Link>
+        </LinkRow>
+        <LinkRow header="Multipharma" byline="Digital Product Design">
+          <Link
+            href="https://www.inthepocket.com/work/multipharma"
+            className="uppercase text-neutral-100 transition-all duration-150 hover:text-neutral-100 hover:underline"
+          >
+            inthepocket.com ↗
+          </Link>
         </LinkRow>
       </section>
     </div>
