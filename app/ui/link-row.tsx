@@ -12,7 +12,7 @@ export function LinkRow({ className, header, byline, children }: LinkRowProps) {
   return (
     <div
       className={classNames(
-        "flex flex-col justify-between border-b border-neutral-100/5 py-3 md:flex-row md:items-center",
+        "flex items-center justify-between border-b border-neutral-100/5 py-4",
         className,
       )}
     >
@@ -20,7 +20,7 @@ export function LinkRow({ className, header, byline, children }: LinkRowProps) {
         <h3>{header}</h3>
         <p className="uppercase ~text-sm/base">{byline}</p>
       </div>
-      <div className="mt-4 flex-shrink-0 md:ml-4 md:mt-0">{children}</div>
+      <div className="ml-4 flex-shrink-0">{children}</div>
     </div>
   );
 }
