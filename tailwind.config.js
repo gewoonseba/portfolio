@@ -1,5 +1,5 @@
+import fluid, { extract } from "fluid-tailwind";
 import plugin from "tailwindcss/plugin";
-import fluid, { extract, screens } from "fluid-tailwind";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -19,6 +19,9 @@ const config = {
       //impossible to use theme screens here, because of inconsitencies in how they handle the 62.5% font size in media queries vs in the DOM
       defaultScreens: ["32rem", "204.8rem"],
     }),
+    fontFamily: {
+      sans: ["var(--font-inter)"],
+    },
     fontSize: {
       sm: ["1.4rem", "1.6rem"],
       base: ["1.6rem", "2.4rem"],

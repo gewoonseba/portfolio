@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Footer } from "@/app/ui/footer";
 import Navbar from "@/app/ui/navbar";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
+import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--main-font",
+const interLocal = localFont({
+  src: "/./InterVariable.woff2",
+  display: "swap",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -18,13 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable}`}>
-      <body className="max-w-screen-3xl text-base ~px-2/5 3xl:mx-auto">
+    <html lang="en" className={`${interLocal.variable}`}>
+      <body className="min-h-dvh max-w-screen-3xl text-base ~px-2/5 3xl:mx-auto">
         <Navbar />
-        {children}
-        <div className="h-[1000px]"></div>
-        {children}
-        <div className="h-[1000px]"></div>
+        <main>{children}</main>
+        <Footer className="sticky top-full" />
       </body>
     </html>
   );

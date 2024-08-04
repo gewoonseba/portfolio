@@ -1,3 +1,4 @@
+import { ContactButton } from "@/app/ui/button/contact-button";
 import { LinkRow } from "@/app/ui/link-row";
 import Link from "next/link";
 
@@ -38,7 +39,7 @@ export default function Design() {
             2021 - 2023
           </span>
         </LinkRow>
-        <LinkRow header="Full stack engineer" byline="AE">
+        <LinkRow header="Full Stack Engineer" byline="AE">
           <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
             2017 - 2021
           </span>
@@ -74,6 +75,26 @@ export default function Design() {
             view case ↗
           </Link>
         </LinkRow>
+      </section>
+      <section className="flex max-w-prose flex-col items-start gap-2 ~py-4/10">
+        <h2>Let's talk</h2>
+        <p>
+          For any iquiries, send me an e-mail over at{" "}
+          <Link
+            className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
+            href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
+          >
+            seba@gewoonseba.com ↗
+          </Link>{" "}
+          or book a meeting with me on{" "}
+          <Link
+            className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
+            href="https://cal.com/gewoonseba/30min"
+          >
+            cal.com ↗
+          </Link>
+        </p>
+        <ContactButton className="mt-2" />
       </section>
     </div>
   );

@@ -4,30 +4,18 @@ import { WordMark } from "@/app/ui/wordmark";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
-import { IconLink } from "@/app/ui/button/icon-link";
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { useEffect, useState } from "react";
 import useDetectAgent from "@/app/util/mobile-detect";
-import { Instagram } from "@/app/ui/icons/instagram";
-import { LinkedIn } from "@/app/ui/icons/linkedin";
 import { MenuButton } from "@/app/ui/button/menu-button";
-import { ReadCV } from "@/app/ui/icons/readcv";
-
+import { paths } from "@/app/util/nav-links";
+import { SocialLinks } from "@/app/ui/social-icons";
 export interface NavbarProps {
   className?: string;
 }
 
-export interface NavLinks {
-  path: string;
-  label: string;
-}
-
 export default function Navbar({ className }: NavbarProps) {
   const pathname = usePathname();
-  const paths = [
-    { path: "/", label: "Design" },
-    { path: "/photos", label: "Photos" },
-  ] as NavLinks[];
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -151,17 +139,7 @@ export default function Navbar({ className }: NavbarProps) {
             )}
           >
             <ContactButton />
-            <div className="flex gap-1">
-              <IconLink href="https://www.instagram.com/gewoon.seba/">
-                <Instagram />
-              </IconLink>
-              <IconLink href="https://read.cv/gewoon.seba">
-                <ReadCV />
-              </IconLink>
-              <IconLink href="https://www.linkedin.com/in/sebastian-stoelen-43b605b4/">
-                <LinkedIn />
-              </IconLink>
-            </div>
+            <SocialLinks />
           </div>
         </div>
       </div>
