@@ -26,6 +26,7 @@
   html {
     @apply bg-neutral-900 font-sans font-normal text-neutral-100;
     font-size: 62.5%;
+    font-optical-sizing: auto;
   }
 
   h1,
@@ -36,6 +37,7 @@
 
   h1 {
     @apply text-huge font-semibold leading-none tracking-tighter ~-ml-0/4 [text-align-last:justify];
+    font-weight: 600;
     font-feature-settings: "cv10";
   }
 
@@ -48,6 +50,6 @@
   }
 
   p {
-    @apply text-neutral-200 ~text-base/md;
+    @apply text-justify text-neutral-200 ~text-base/md;
   }
 }

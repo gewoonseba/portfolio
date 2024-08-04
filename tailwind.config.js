@@ -22,13 +22,17 @@ const config = {
     fontFamily: {
       sans: ["var(--font-inter)"],
     },
+    fontWeight: {
+      normal: "350",
+      semibold: "550",
+    },
     fontSize: {
       sm: ["1.4rem", "1.6rem"],
       base: ["1.6rem", "2.4rem"],
       md: ["2rem", "2.4rem"],
       lg: ["2.4rem", "2.8rem"],
       xl: ["2.8rem", "3.2rem"],
-      huge: ["clamp(5rem, 17.2vw + -0.5rem, 34.6rem)", "1"],
+      huge: ["clamp(4.8rem, 16.7vw + -0.57rem, 33.8rem)", "1"],
     },
     colors: {
       neutral: {

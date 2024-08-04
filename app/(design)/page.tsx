@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Design() {
   return (
     <div>
-      <section className="grid place-items-center ~py-4/10">
+      <section className="~py-4/10">
         <h1>Gewoon Seba.</h1>
       </section>
       <section className="flex max-w-prose flex-col gap-2 ~py-4/10">

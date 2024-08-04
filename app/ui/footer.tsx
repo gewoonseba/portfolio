@@ -1,10 +1,10 @@
 "use client";
 
+import { SocialLinks } from "@/app/ui/social-icons";
+import { paths } from "@/app/util/nav-links";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { paths } from "@/app/util/nav-links";
-import { SocialLinks } from "@/app/ui/social-icons";
 
 interface FooterProps {
   className?: string;
@@ -15,33 +15,36 @@ export const Footer = ({ className }: FooterProps) => {
 
   return (
     <footer
-      className={classNames("grid grid-cols-3 items-center pb-2", className)}
+      className={classNames(
+        "grid justify-items-center gap-1 pb-2 md:grid-cols-3",
+        className,
+      )}
     >
-      <nav>
+      <nav className="flex items-center gap-4 md:justify-self-start">
         {paths.map(({ path, label }) => (
           <Link
             key={path}
             href={path}
             className={classNames(
-              "relative mr-4 uppercase transition-all duration-200 ease-out ~text-base/md hover:text-neutral-100",
+              "relative uppercase transition-all duration-200 ease-out ~text-sm/base hover:text-neutral-100",
               pathname === path ? "text-neutral-100" : "text-neutral-200",
             )}
           >
             {label}
             <span
               className={classNames(
-                "absolute inset-x-0 top-[0.9rem] block h-0.5 bg-neutral-100 transition-all duration-200",
+                "absolute inset-x-0 top-[48%] block h-0.5 bg-neutral-100 transition-all duration-200",
                 pathname === path ? "max-w-full" : "max-w-0",
               )}
             ></span>
           </Link>
         ))}
       </nav>
-      <p className="justify-self-center text-center uppercase">
+      <p className="row-start-3 justify-self-center text-center uppercase ~text-sm/base md:row-start-auto">
         © {new Date().getFullYear()}{" "}
         <span className="whitespace-nowrap">Gewoon Seba</span>
       </p>
-      <SocialLinks className="justify-self-end" />
+      <SocialLinks className="md:justify-self-end" />
     </footer>
   );
 };
