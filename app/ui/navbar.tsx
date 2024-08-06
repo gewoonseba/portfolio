@@ -1,15 +1,15 @@
 "use client";
 
+import { ContactButton } from "@/app/ui/button/contact-button";
+import { MenuButton } from "@/app/ui/button/menu-button";
+import { SocialLinks } from "@/app/ui/social-icons";
 import { WordMark } from "@/app/ui/wordmark";
+import useDetectAgent from "@/app/util/mobile-detect";
+import { paths } from "@/app/util/nav-links";
+import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import classNames from "classnames";
-import { ContactButton } from "@/app/ui/button/contact-button";
 import { useEffect, useState } from "react";
-import useDetectAgent from "@/app/util/mobile-detect";
-import { MenuButton } from "@/app/ui/button/menu-button";
-import { paths } from "@/app/util/nav-links";
-import { SocialLinks } from "@/app/ui/social-icons";
 export interface NavbarProps {
   className?: string;
 }
@@ -77,7 +77,7 @@ export default function Navbar({ className }: NavbarProps) {
                 {label}
                 <span
                   className={classNames(
-                    "absolute inset-x-5 top-[0.9rem] block h-0.5 bg-neutral-100 transition-all duration-200",
+                    "absolute inset-x-5 top-[48%] block h-0.5 bg-neutral-100 transition-all duration-200",
                     pathname === path ? "max-w-full" : "max-w-0",
                   )}
                 ></span>
@@ -125,7 +125,7 @@ export default function Navbar({ className }: NavbarProps) {
                 {label}
                 <span
                   className={classNames(
-                    "absolute top-4 block h-[0.3rem] bg-neutral-100",
+                    "absolute top-[48%] block h-[0.2rem] bg-neutral-100",
                     pathname === path ? "w-full" : "w-0",
                   )}
                 ></span>
