@@ -8,6 +8,7 @@ const interLocal = localFont({
   src: "/./InterVariable.woff2",
   display: "swap",
   variable: "--font-inter",
+  weight: "350 550",
 });
 
 export const metadata: Metadata = {

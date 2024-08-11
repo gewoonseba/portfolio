@@ -1,64 +1,43 @@
-import portfolioImg1 from "@/public/sebastian-stoelen-001.jpg";
-import portfolioImg2 from "@/public/sebastian-stoelen-002.jpg";
-import portfolioImg3 from "@/public/sebastian-stoelen-003.jpg";
-import portfolioImg4 from "@/public/sebastian-stoelen-004.jpg";
-import portfolioImg5 from "@/public/sebastian-stoelen-005.jpg";
-import portfolioImg6 from "@/public/sebastian-stoelen-006.jpg";
-import portfolioImg7 from "@/public/sebastian-stoelen-007.jpg";
-import portfolioImg8 from "@/public/sebastian-stoelen-008.jpg";
-import portfolioImg9 from "@/public/sebastian-stoelen-009.jpg";
-import portfolioImg10 from "@/public/sebastian-stoelen-010.jpg";
-import portfolioImg11 from "@/public/sebastian-stoelen-011.jpg";
-import portfolioImg12 from "@/public/sebastian-stoelen-012.jpg";
+import verkeer from "@/public/img/noord/sebastian-stoelen-002.jpg";
+import wash from "@/public/img/noord/sebastian-stoelen-005.jpg";
+import bxl from "@/public/img/noord/sebastian-stoelen-007.jpg";
+import bxl1 from "@/public/img/noord/sebastian-stoelen-010.jpg";
+import bxl2 from "@/public/img/noord/sebastian-stoelen-011.jpg";
+import bxl3 from "@/public/img/noord/sebastian-stoelen-021.jpg";
+import bxl4 from "@/public/img/noord/sebastian-stoelen-022.jpg";
+import station from "@/public/img/sebastian-stoelen-001.jpg";
+import okn from "@/public/img/sebastian-stoelen-003.jpg";
+import plant from "@/public/img/sebastian-stoelen-004.jpg";
+import grg from "@/public/img/sebastian-stoelen-006.jpg";
+import fre from "@/public/img/sebastian-stoelen-008.jpg";
+import service from "@/public/img/sebastian-stoelen-009.jpg";
+import auto from "@/public/img/sebastian-stoelen-012.jpg";
+import kbt from "@/public/img/sebastian-stoelen-015.jpg";
+import brief from "@/public/img/sebastian-stoelen-016.jpg";
 import Image from "next/image";
 export default function Photos() {
   return (
     <section className="grid grid-cols-1 items-center gap-4 ~py-4/10 md:grid-cols-3">
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg1}
+          className="h-auto max-w-full"
+          src={station}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg2}
+          className="h-auto max-w-full"
+          src={auto}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg3}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-
-      <div>
-        <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg4}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg5}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg6}
+          className="h-auto max-w-full"
+          src={fre}
           alt=""
           placeholder="blur"
         ></Image>
@@ -66,48 +45,115 @@ export default function Photos() {
 
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg7}
+          className="h-auto max-w-full"
+          src={okn}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={plant}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg8}
+          className="h-auto max-w-full"
+          src={grg}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={bxl}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={bxl1}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg9}
+          className="h-auto max-w-full"
+          src={bxl2}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div className="col-span-1 w-full md:col-span-2">
+        <Image
+          className="h-full w-full object-cover object-top"
+          src={verkeer}
+          alt=""
+          placeholder="blur"
+          style={{ aspectRatio: "3.08  / 1" }}
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={bxl3}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={bxl4}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div className="col-span-1 w-full md:col-span-2">
+        <Image
+          className="h-full w-full object-cover object-top"
+          src={wash}
+          alt=""
+          placeholder="blur"
+          style={{ aspectRatio: "3.08  / 1" }}
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={service}
+          alt=""
+          placeholder="blur"
+        ></Image>
+      </div>
+
+      <div>
+        <Image
+          className="h-auto max-w-full"
+          src={brief}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
       <div>
         <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg10}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg11}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="rounded-lg h-auto max-w-full"
-          src={portfolioImg12}
+          className="h-auto max-w-full"
+          src={kbt}
           alt=""
           placeholder="blur"
         ></Image>
