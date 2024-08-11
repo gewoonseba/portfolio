@@ -3,30 +3,31 @@
 @tailwind utilities;
 
 /* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   @apply w-2;
-}
+} */
 
 /* Track */
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   @apply bg-neutral-900;
-}
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   @apply rounded-full bg-neutral-100/30;
-}
+} */
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+/* ::-webkit-scrollbar-thumb:hover {
   @apply bg-neutral-100/40;
-}
+} */
 
 @layer base {
   html {
     @apply bg-neutral-900 font-sans font-normal text-neutral-100 antialiased;
     font-size: 62.5%;
     font-optical-sizing: auto;
+    scrollbar-gutter: stable both-sides;
   }
 
   h1,

@@ -4,7 +4,6 @@ import { ContactButton } from "@/app/ui/button/contact-button";
 import { MenuButton } from "@/app/ui/button/menu-button";
 import { SocialLinks } from "@/app/ui/social-icons";
 import { WordMark } from "@/app/ui/wordmark";
-import useDetectAgent from "@/app/util/mobile-detect";
 import { paths } from "@/app/util/nav-links";
 import classNames from "classnames";
 import Link from "next/link";
@@ -22,8 +21,6 @@ export default function Navbar({ className }: NavbarProps) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const currentDevice = useDetectAgent();
-
   useEffect(() => {
     const html = document.querySelector("html");
     if (html) html.classList.toggle("overflow-hidden", isMenuOpen);
@@ -40,12 +37,7 @@ export default function Navbar({ className }: NavbarProps) {
   }, [closeMenu]);
 
   return (
-    <header
-      className={classNames(
-        "sticky top-0 z-50 h-18 py-2",
-        isMenuOpen && currentDevice.isDesktop() ? "pr-2" : "pr-0", //account for scrollbar dissapearing on menu open
-      )}
-    >
+    <header className={classNames("sticky top-0 z-50 h-18 py-2")}>
       <div
         className={classNames(
           "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 bg-neutral-900/30 shadow-border backdrop-blur-xl transition-all duration-300 ease-in-out",
