@@ -8,7 +8,7 @@ import { paths } from "@/app/util/nav-links";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 export interface NavbarProps {
   className?: string;
 }
@@ -19,7 +19,7 @@ export default function Navbar({ className }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), [setIsMenuOpen]);
 
   useEffect(() => {
     const html = document.querySelector("html");

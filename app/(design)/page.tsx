@@ -10,8 +10,8 @@ export default function Design() {
       </section>
       <section className="flex max-w-prose flex-col gap-2 ~py-4/10">
         <p>
-          Hello! I'm Seba, a designer with a soft spot for code. Currently, I’m
-          leading product at{" "}
+          Hello! I&apos;m Seba, a designer with a soft spot for code. Currently,
+          I&apos;m leading product at{" "}
           <Link
             className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
             href="https://www.smooved.be"
@@ -22,8 +22,8 @@ export default function Design() {
         </p>
         <p>
           I believe that details matter, form is also a function and an
-          excellent product sells itself. I’m driven by curiosity and a desire
-          to continually improve my craft.
+          excellent product sells itself. I&apos;m driven by curiosity and a
+          desire to continually improve my craft.
         </p>
         <p>Nice to meet you.</p>
       </section>
@@ -77,7 +77,7 @@ export default function Design() {
         </LinkRow>
       </section>
       <section className="flex max-w-prose flex-col items-start gap-2 ~py-4/10">
-        <h2>Let's talk</h2>
+        <h2>Let&apos;s talk</h2>
         <p>
           For any iquiries, send me an e-mail over at{" "}
           <Link
