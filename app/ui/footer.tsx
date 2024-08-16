@@ -40,7 +40,7 @@ export const Footer = ({ className }: FooterProps) => {
           </Link>
         ))}
       </nav>
-      <p className="row-start-3 justify-self-center text-center uppercase ~text-sm/base md:row-start-auto">
+      <p className="row-start-3 my-auto justify-self-center text-center uppercase ~text-sm/base md:row-start-auto">
         © {new Date().getFullYear()}{" "}
         <span className="whitespace-nowrap">Gewoon Seba</span>
       </p>
