@@ -14,7 +14,13 @@ import service from "@/public/img/sebastian-stoelen-009.jpg";
 import auto from "@/public/img/sebastian-stoelen-012.jpg";
 import kbt from "@/public/img/sebastian-stoelen-015.jpg";
 import brief from "@/public/img/sebastian-stoelen-016.jpg";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Gewoon Seba | Photos",
+  description: "Designer with a soft spot for code.",
+};
 export default function Photos() {
   return (
     <section className="grid grid-cols-1 items-center gap-4 ~py-4/10 md:grid-cols-3">

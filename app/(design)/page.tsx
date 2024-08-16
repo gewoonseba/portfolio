@@ -1,6 +1,12 @@
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { LinkRow } from "@/app/ui/link-row";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Gewoon Seba | Design",
+  description: "Designer with a soft spot for code.",
+};
 
 export default function Design() {
   return (
