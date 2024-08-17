@@ -85,7 +85,7 @@ export default function Design() {
       <section className="flex max-w-prose flex-col items-start gap-2 ~py-4/10">
         <h2>Let&apos;s talk</h2>
         <p>
-          For any iquiries, send me an e-mail over at{" "}
+          For any inquiries, send me an e-mail over at{" "}
           <Link
             className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
             href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
