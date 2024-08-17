@@ -1,5 +1,6 @@
 import { Footer } from "@/app/ui/footer";
 import Navbar from "@/app/ui/navbar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer className="sticky top-full" />
+        <SpeedInsights />
       </body>
     </html>
   );
