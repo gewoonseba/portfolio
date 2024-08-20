@@ -1,5 +1,6 @@
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { LinkRow } from "@/app/ui/link-row";
+import { WorkCard } from "@/app/ui/work-card";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -34,26 +35,22 @@ export default function Design() {
         <p>Nice to meet you.</p>
       </section>
       <section className="~py-4/10">
-        <h2 className="pb-4">Experience</h2>
-        <LinkRow className="border-t" header="Head of Product" byline="Smooved">
-          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
-            current
-          </span>
-        </LinkRow>
-        <LinkRow header="Product Designer" byline="In The Pocket">
-          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
-            2021 - 2023
-          </span>
-        </LinkRow>
-        <LinkRow header="Full Stack Engineer" byline="AE">
-          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
-            2017 - 2021
-          </span>
-        </LinkRow>
-      </section>
-      <section className="~py-4/10">
-        <h2 className="pb-4">Projects</h2>
-        <LinkRow
+        <h2 className="pb-4">Work</h2>
+        <div className="grid grid-cols-1 gap-4 border-t border-neutral-100/5 pt-4 md:grid-cols-3">
+          <div className="flex flex-col gap-4">
+            <WorkCard />
+            <WorkCard />
+          </div>
+          <div className="flex flex-col gap-4">
+            <WorkCard />
+            <WorkCard />
+          </div>
+          <div className="flex flex-col gap-4">
+            <WorkCard />
+            <WorkCard />
+          </div>
+        </div>
+        {/* <LinkRow
           className="border-t"
           header="Fednot Izimi"
           byline="Digital Product Design"
@@ -80,8 +77,27 @@ export default function Design() {
           >
             view case ↗
           </Link>
+        </LinkRow> */}
+      </section>
+      <section className="~py-4/10">
+        <h2 className="pb-4">Experience</h2>
+        <LinkRow className="border-t" header="Head of Product" byline="Smooved">
+          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
+            current
+          </span>
+        </LinkRow>
+        <LinkRow header="Product Designer" byline="In The Pocket">
+          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
+            2021 - 2023
+          </span>
+        </LinkRow>
+        <LinkRow header="Full Stack Engineer" byline="AE">
+          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
+            2017 - 2021
+          </span>
         </LinkRow>
       </section>
+
       <section className="flex max-w-prose flex-col items-start gap-2 ~py-4/10">
         <h2>Let&apos;s talk</h2>
         <p>

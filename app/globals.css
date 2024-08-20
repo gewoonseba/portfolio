@@ -49,6 +49,10 @@
     @apply font-semibold tracking-tight ~text-lg/xl;
   }
 
+  h4 {
+    @apply font-semibold ~text-base/md;
+  }
+
   p {
     @apply text-justify text-neutral-200 ~text-base/md;
   }
