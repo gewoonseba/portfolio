@@ -1,6 +1,6 @@
+import Work from "@/app/sections/Work";
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { LinkRow } from "@/app/ui/link-row";
-import { WorkCard } from "@/app/ui/work-card";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -35,49 +35,7 @@ export default function Design() {
         <p>Nice to meet you.</p>
       </section>
       <section className="~py-4/10">
-        <h2 className="pb-4">Work</h2>
-        <div className="grid grid-cols-1 gap-4 border-t border-neutral-100/5 pt-4 md:grid-cols-3">
-          <div className="flex flex-col gap-4">
-            <WorkCard />
-            <WorkCard />
-          </div>
-          <div className="flex flex-col gap-4">
-            <WorkCard />
-            <WorkCard />
-          </div>
-          <div className="flex flex-col gap-4">
-            <WorkCard />
-            <WorkCard />
-          </div>
-        </div>
-        {/* <LinkRow
-          className="border-t"
-          header="Fednot Izimi"
-          byline="Digital Product Design"
-        >
-          <Link
-            href="https://www.inthepocket.com/work/izimi"
-            className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base hover:text-neutral-100 hover:underline"
-          >
-            view case ↗
-          </Link>
-        </LinkRow>
-        <LinkRow header="TP Vision Wave" byline="Digital Product Design">
-          <Link
-            href="https://www.inthepocket.com/work/tp-vision"
-            className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base hover:text-neutral-100 hover:underline"
-          >
-            view case ↗
-          </Link>
-        </LinkRow>
-        <LinkRow header="Multipharma" byline="Digital Product Design">
-          <Link
-            href="https://www.inthepocket.com/work/multipharma"
-            className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base hover:text-neutral-100 hover:underline"
-          >
-            view case ↗
-          </Link>
-        </LinkRow> */}
+        <Work />
       </section>
       <section className="~py-4/10">
         <h2 className="pb-4">Experience</h2>
