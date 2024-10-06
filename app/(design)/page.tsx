@@ -1,4 +1,4 @@
-import Work from "@/app/sections/Work";
+import Work from "@/app/sections/work";
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { LinkRow } from "@/app/ui/link-row";
 import { Metadata } from "next";
