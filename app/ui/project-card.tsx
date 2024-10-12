@@ -15,7 +15,7 @@ type Project = {
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group">
-      <div className="rounded-lg relative mb-4 aspect-[4/3] w-full overflow-hidden">
+      <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-1 shadow-border">
         <Image
           src={project.image}
           alt={project.title}

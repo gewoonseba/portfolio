@@ -14,10 +14,10 @@ type Project = {
 const projects: Project[] = [
   {
     id: "1",
-    title: "Search bar prototype in Play",
+    title: "Filling in forms on mobile",
     year: 2024,
     company: "Smooved",
-    image: "/img/design/izimi.jpg",
+    image: "/img/design/fluid-docs.gif",
   },
   {
     id: "2",
@@ -69,8 +69,8 @@ const projects: Project[] = [
 
 export default function Work() {
   return (
-    <section className="py-16 md:py-24">
-      <h2 className="pb-8 text-3xl font-bold">Work</h2>
+    <section className="md:py-24 py-16">
+      <h2 className="text-3xl font-bold pb-8">Work</h2>
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
