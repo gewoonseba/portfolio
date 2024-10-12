@@ -1,7 +1,7 @@
 "use client";
 
 import { ProjectCard } from "@/app/ui/project-card";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 
 type Project = {
@@ -124,31 +124,29 @@ export default function Work() {
           </ul>
         </nav>
       </div>
-      <AnimatePresence>
-        <div className="flex flex-col gap-6 sm:flex-row">
-          <div className="flex flex-col gap-6 sm:w-1/2 lg:w-1/3">
-            {filteredProjects
-              .filter((_, index) => index % 3 === 0)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-          </div>
-          <div className="flex flex-col gap-6 sm:w-1/2 lg:w-1/3">
-            {filteredProjects
-              .filter((_, index) => index % 3 === 1)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-          </div>
-          <div className="hidden flex-col gap-6 lg:flex lg:w-1/3">
-            {filteredProjects
-              .filter((_, index) => index % 3 === 2)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-          </div>
-        </div>
-      </AnimatePresence>
+      <motion.div layout className="flex flex-col gap-6 sm:flex-row">
+        {[0, 1, 2].map((columnIndex) => (
+          <motion.div
+            key={columnIndex}
+            layout
+            className={`flex flex-col gap-6 ${
+              columnIndex === 0
+                ? "sm:w-1/2 lg:w-1/3"
+                : columnIndex === 1
+                ? "sm:w-1/2 lg:w-1/3"
+                : "hidden lg:flex lg:w-1/3"
+            }`}
+          >
+            <AnimatePresence mode="popLayout">
+              {filteredProjects
+                .filter((_, index) => index % 3 === columnIndex)
+                .map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+            </AnimatePresence>
+          </motion.div>
+        ))}
+      </motion.div>
     </>
   );
 }

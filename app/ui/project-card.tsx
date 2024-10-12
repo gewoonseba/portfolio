@@ -15,39 +15,22 @@ type Project = {
   isGif: boolean;
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
+const cardVariants = {
+  hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
+    scale: 1,
     transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.1,
+      duration: 0.4,
+      ease: [0.43, 0.13, 0.23, 0.96], // Custom easing
     },
   },
   exit: {
     opacity: 0,
+    scale: 0.8,
     transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.6, -0.05, 0.01, 0.99], // Custom easing
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
+      duration: 0.4,
+      ease: [0.43, 0.13, 0.23, 0.96], // Custom easing
     },
   },
 };
@@ -55,16 +38,15 @@ const itemVariants = {
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
-      className="group"
       layout
-      variants={containerVariants}
+      variants={cardVariants}
       initial="hidden"
       animate="visible"
       exit="exit"
+      className="group"
     >
       <motion.div
         layout
-        variants={itemVariants}
         className={`relative mb-2 w-full overflow-hidden rounded-1 ${
           project.size === "small"
             ? "h-[22rem]"
@@ -95,11 +77,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </motion.div>
         )}
       </motion.div>
-      <motion.div
-        layout
-        variants={itemVariants}
-        className="mb-1 flex items-center justify-between"
-      >
+      <motion.div layout className="mb-1 flex items-center justify-between">
         <motion.h3 layout className="~text-base/md">
           {project.title}
         </motion.h3>
@@ -110,7 +88,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.caseStudy ? "case" : "shot"}
         </motion.span>
       </motion.div>
-      <motion.p layout variants={itemVariants}>
+      <motion.p layout>
         {project.year} · {project.company}
       </motion.p>
     </motion.div>
