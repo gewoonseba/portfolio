@@ -56,9 +56,11 @@ export default function Design() {
         </LinkRow>
       </section>
 
-      <section className="flex max-w-prose flex-col items-start gap-2 ~py-4/10">
-        <h2>Let&apos;s talk</h2>
-        <p>
+      <section className="flex w-full flex-col items-start ~py-4/10">
+        <h2 className="w-full border-b border-neutral-100/5 pb-4">
+          Let&apos;s talk
+        </h2>
+        <p className="max-w-prose pt-4">
           For any inquiries, send me an e-mail over at{" "}
           <Link
             className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
@@ -74,7 +76,7 @@ export default function Design() {
             cal.com ↗
           </Link>
         </p>
-        <ContactButton className="mt-2" />
+        <ContactButton className="mt-4" />
       </section>
     </div>
   );
