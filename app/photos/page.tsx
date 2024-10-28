@@ -26,7 +26,7 @@ export default function Photos() {
     <section className="grid grid-cols-1 items-center gap-4 ~py-4/10 md:grid-cols-3">
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={station}
           alt=""
           placeholder="blur"
@@ -34,7 +34,7 @@ export default function Photos() {
       </div>
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={auto}
           alt=""
           placeholder="blur"
@@ -42,7 +42,7 @@ export default function Photos() {
       </div>
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={fre}
           alt=""
           placeholder="blur"
@@ -51,7 +51,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={okn}
           alt=""
           placeholder="blur"
@@ -60,7 +60,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={plant}
           alt=""
           placeholder="blur"
@@ -68,7 +68,7 @@ export default function Photos() {
       </div>
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={grg}
           alt=""
           placeholder="blur"
@@ -77,7 +77,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={bxl}
           alt=""
           placeholder="blur"
@@ -86,7 +86,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={bxl1}
           alt=""
           placeholder="blur"
@@ -94,16 +94,16 @@ export default function Photos() {
       </div>
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={bxl2}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
 
-      <div className="col-span-1 w-full md:col-span-2">
+      <div className="col-span-1 w-full rounded-1 md:col-span-2">
         <Image
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full rounded-1 object-cover object-top"
           src={verkeer}
           alt=""
           placeholder="blur"
@@ -113,7 +113,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={bxl3}
           alt=""
           placeholder="blur"
@@ -122,16 +122,16 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={bxl4}
           alt=""
           placeholder="blur"
         ></Image>
       </div>
 
-      <div className="col-span-1 w-full md:col-span-2">
+      <div className="col-span-1 w-full rounded-1 md:col-span-2">
         <Image
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full rounded-1 object-cover object-top"
           src={wash}
           alt=""
           placeholder="blur"
@@ -141,7 +141,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={service}
           alt=""
           placeholder="blur"
@@ -150,7 +150,7 @@ export default function Photos() {
 
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={brief}
           alt=""
           placeholder="blur"
@@ -158,7 +158,7 @@ export default function Photos() {
       </div>
       <div>
         <Image
-          className="h-auto max-w-full"
+          className="h-auto max-w-full rounded-1"
           src={kbt}
           alt=""
           placeholder="blur"

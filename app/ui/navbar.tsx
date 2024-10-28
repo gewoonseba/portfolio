@@ -40,7 +40,7 @@ export default function Navbar({ className }: NavbarProps) {
     <header className={classNames("sticky top-0 z-50 h-18 py-2")}>
       <div
         className={classNames(
-          "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 bg-neutral-900/30 shadow-border backdrop-blur-xl transition-all duration-300 ease-in-out",
+          "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 bg-neutral-900/80 shadow-border backdrop-blur-lg transition-all duration-300 ease-in-out",
           isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-14",
         )}
       >
