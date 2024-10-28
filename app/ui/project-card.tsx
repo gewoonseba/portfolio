@@ -27,15 +27,15 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="absolute inset-0 flex items-center justify-center bg-neutral-900/80 opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
             <Link
               href={project.caseStudy}
-              className="text-lg uppercase tracking-wide text-neutral-100 transition-all duration-150 hover:underline"
+              className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base hover:underline"
             >
-              READ CASE ↗
+              View casse ↗
             </Link>
           </div>
         )}
       </div>
-      <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>
-      <p className="text-neutral-400 text-sm">
+      <h3 className="~text-base/md">{project.title}</h3>
+      <p className="uppercase tracking-tight ~text-sm/base">
         {project.year} · {project.company}
       </p>
     </div>
