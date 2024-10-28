@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "Izimi app and web platform",
     year: 2023,
     company: "In The Pocket",
-    image: "/img/design/izimi.jpg",
+    image: "/img/design/izimi.png",
     caseStudy: "https://www.inthepocket.com/work/izimi",
   },
   {
@@ -25,7 +25,7 @@ const projects: Project[] = [
     title: "TP Vision Wave web platform",
     year: 2022,
     company: "In The Pocket",
-    image: "/img/design/tpvision.jpg",
+    image: "/img/design/tpvision.png",
     caseStudy: "https://www.inthepocket.com/work/tp-vision",
   },
   {
@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "Multipharma app",
     year: 2021,
     company: "In The Pocket",
-    image: "/img/design/multipharma.jpg",
+    image: "/img/design/multipharma.png",
     caseStudy: "https://www.inthepocket.com/work/multipharma",
   },
 ];

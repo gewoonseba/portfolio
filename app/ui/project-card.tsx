@@ -13,28 +13,45 @@ type Project = {
 };
 
 export function ProjectCard({ project }: { project: Project }) {
+  if (project.caseStudy) {
+    return (
+      <Link href={project.caseStudy} className="group block">
+        <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-1 shadow-border">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="bg-neutral-800 object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div className="flex items-center justify-between">
+          <h3 className="~text-base/md">{project.title}</h3>
+          <span className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base group-hover:underline">
+            View case ↗
+          </span>
+        </div>
+        <p className="uppercase tracking-tight ~text-sm/base">
+          {project.year} · {project.company}
+        </p>
+      </Link>
+    );
+  }
+
   return (
-    <div className="group">
+    <div>
       <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-1 shadow-border">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          className="bg-neutral-800 object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-        {project.caseStudy && (
-          <div className="absolute inset-0 flex items-center justify-center bg-neutral-900/80 opacity-0 backdrop-blur transition-opacity duration-300 group-hover:opacity-100">
-            <Link
-              href={project.caseStudy}
-              className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base hover:underline"
-            >
-              View case ↗
-            </Link>
-          </div>
-        )}
       </div>
-      <h3 className="~text-base/md">{project.title}</h3>
+      <div className="flex items-center justify-between">
+        <h3 className="~text-base/md">{project.title}</h3>
+      </div>
       <p className="uppercase tracking-tight ~text-sm/base">
         {project.year} · {project.company}
       </p>
