@@ -29,7 +29,7 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.caseStudy}
               className="uppercase tracking-tight text-neutral-100 transition-all duration-150 ~text-sm/base hover:underline"
             >
-              View casse ↗
+              View case ↗
             </Link>
           </div>
         )}
