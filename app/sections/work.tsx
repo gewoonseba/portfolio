@@ -5,7 +5,7 @@ import { Project, ProjectCard } from "@/app/ui/project-card";
 const projects: Project[] = [
   {
     id: "smvd-doc",
-    title: "Filling out documents",
+    title: "Filling out PDF documents",
     year: 2024,
     company: "Smooved",
     media: {
