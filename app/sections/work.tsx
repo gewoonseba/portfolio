@@ -1,40 +1,65 @@
 "use client";
 
-import { ProjectCard } from "@/app/ui/project-card";
-
-type Project = {
-  id: string;
-  title: string;
-  year: number;
-  company: string;
-  image: string;
-  caseStudy?: string;
-};
+import { Project, ProjectCard } from "@/app/ui/project-card";
 
 const projects: Project[] = [
   {
-    id: "1",
+    id: "smvd-doc",
+    title: "Filling out PDF documents",
+    type: "Figma Prototype",
+    year: 2024,
+    company: "Smooved",
+    media: {
+      type: "video",
+      src: "/img/design/fluid-doc.mp4",
+    },
+  },
+  {
+    id: "smvd-companion",
+    title: "Entering meter info",
+    type: "Play Prototype",
+    year: 2024,
+    company: "Smooved",
+    media: {
+      type: "video",
+      src: "/img/design/companion.mp4",
+    },
+  },
+  {
+    id: "itp-izimi",
     title: "Izimi app and web platform",
+    type: "Case Study",
     year: 2023,
     company: "In The Pocket",
-    image: "/img/design/izimi.png",
-    caseStudy: "https://www.inthepocket.com/work/izimi",
+    media: {
+      type: "image",
+      src: "/img/design/izimi.png",
+    },
+    link: "https://www.inthepocket.com/work/izimi",
   },
   {
-    id: "2",
+    id: "itp-tpvision",
     title: "TP Vision Wave web platform",
+    type: "Case Study",
     year: 2022,
     company: "In The Pocket",
-    image: "/img/design/tpvision.png",
-    caseStudy: "https://www.inthepocket.com/work/tp-vision",
+    media: {
+      type: "image",
+      src: "/img/design/tpvision.png",
+    },
+    link: "https://www.inthepocket.com/work/tp-vision",
   },
   {
-    id: "3",
+    id: "itp-multipharma",
     title: "Multipharma app",
+    type: "Case Study",
     year: 2021,
     company: "In The Pocket",
-    image: "/img/design/multipharma.png",
-    caseStudy: "https://www.inthepocket.com/work/multipharma",
+    media: {
+      type: "image",
+      src: "/img/design/multipharma.png",
+    },
+    link: "https://www.inthepocket.com/work/multipharma",
   },
 ];
 
