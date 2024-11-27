@@ -18,24 +18,13 @@ export type Project = {
 export function ProjectCard({ project }: { project: Project }) {
   const MediaContent = () => (
     <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-1 shadow-border">
-      {project.media.type === "image" ? (
-        <Image
-          src={project.media.src}
-          alt={project.title}
-          fill
-          className="bg-neutral-800 object-cover"
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      ) : (
-        <video
-          src={project.media.src}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-full w-full object-cover"
-        />
-      )}
+      <Image
+        src={project.media.src}
+        alt={project.title}
+        fill
+        className="bg-neutral-800 object-cover"
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
     </div>
   );
 
