@@ -9,12 +9,35 @@ interface VideoAutoPlayerProps {
 
 export default function VideoAutoPlayer({ src }: VideoAutoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const shouldAutoplay = !mediaQuery.matches;
+    setIsPlaying(shouldAutoplay);
+
     if (videoRef.current) {
       videoRef.current.muted = true;
+      if (shouldAutoplay) {
+        videoRef.current.play().catch(() => {
+          setIsPlaying(false);
+        });
+      }
     }
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+      if (e.matches && videoRef.current) {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   const togglePlayPause = () => {
@@ -32,9 +55,9 @@ export default function VideoAutoPlayer({ src }: VideoAutoPlayerProps) {
     <div className="relative h-full w-full">
       <video
         ref={videoRef}
-        autoPlay
         loop
         playsInline
+        muted
         className="h-full w-full object-cover"
       >
         <source src={src} type="video/mp4" />
