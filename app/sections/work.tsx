@@ -6,6 +6,7 @@ const projects: Project[] = [
   {
     id: "smvd-doc",
     title: "Filling out PDF documents",
+    type: "Figma Prototype",
     year: 2024,
     company: "Smooved",
     media: {
@@ -14,37 +15,51 @@ const projects: Project[] = [
     },
   },
   {
+    id: "smvd-companion",
+    title: "Entering meter info",
+    type: "Play Prototype",
+    year: 2024,
+    company: "Smooved",
+    media: {
+      type: "video",
+      src: "/img/design/companion.mp4",
+    },
+  },
+  {
     id: "itp-izimi",
     title: "Izimi app and web platform",
+    type: "Case Study",
     year: 2023,
     company: "In The Pocket",
     media: {
       type: "image",
       src: "/img/design/izimi.png",
     },
-    caseStudy: "https://www.inthepocket.com/work/izimi",
+    link: "https://www.inthepocket.com/work/izimi",
   },
   {
     id: "itp-tpvision",
     title: "TP Vision Wave web platform",
+    type: "Case Study",
     year: 2022,
     company: "In The Pocket",
     media: {
       type: "image",
       src: "/img/design/tpvision.png",
     },
-    caseStudy: "https://www.inthepocket.com/work/tp-vision",
+    link: "https://www.inthepocket.com/work/tp-vision",
   },
   {
     id: "itp-multipharma",
     title: "Multipharma app",
+    type: "Case Study",
     year: 2021,
     company: "In The Pocket",
     media: {
       type: "image",
       src: "/img/design/multipharma.png",
     },
-    caseStudy: "https://www.inthepocket.com/work/multipharma",
+    link: "https://www.inthepocket.com/work/multipharma",
   },
 ];
 
