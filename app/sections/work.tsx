@@ -1,19 +1,18 @@
 "use client";
 
 import { Project, ProjectCard } from "@/app/ui/project-card";
-import SimpleVideoPlayer from "@/app/ui/video-autoplayer";
 
 const projects: Project[] = [
-  // {
-  //   id: "smvd-doc",
-  //   title: "Filling out documents",
-  //   year: 2024,
-  //   company: "Smooved",
-  //   media: {
-  //     type: "video",
-  //     src: "/img/design/fluid-doc.mp4",
-  //   },
-  // },
+  {
+    id: "smvd-doc",
+    title: "Filling out documents",
+    year: 2024,
+    company: "Smooved",
+    media: {
+      type: "video",
+      src: "/img/design/fluid-doc.mp4",
+    },
+  },
   {
     id: "itp-izimi",
     title: "Izimi app and web platform",
@@ -56,7 +55,6 @@ export default function Work() {
         Work
       </h2>
       <div className="grid grid-cols-1 gap-12 pt-5 md:grid-cols-2 3xl:grid-cols-3">
-        <SimpleVideoPlayer />
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
