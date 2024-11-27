@@ -40,7 +40,10 @@ export default function VideoAutoPlayer({ src }: VideoAutoPlayerProps) {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  const togglePlayPause = () => {
+  const togglePlayPause = (e?: React.MouseEvent) => {
+    // Prevent event from bubbling up to parent links
+    e?.stopPropagation();
+
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
@@ -53,17 +56,22 @@ export default function VideoAutoPlayer({ src }: VideoAutoPlayerProps) {
 
   return (
     <div className="relative h-full w-full">
-      <video
-        ref={videoRef}
-        loop
-        playsInline
-        muted
-        className="h-full w-full object-cover"
+      <div className="h-full w-full cursor-pointer" onClick={togglePlayPause}>
+        <video
+          ref={videoRef}
+          loop
+          playsInline
+          muted
+          className="h-full w-full object-cover"
+        >
+          <source src={src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div
+        className="absolute bottom-4 right-4"
+        onClick={(e) => e.stopPropagation()} // Prevent double-triggering when clicking the button
       >
-        <source src={src} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute bottom-4 right-4">
         <PlayButton onClick={togglePlayPause} isPlaying={isPlaying} />
       </div>
     </div>
