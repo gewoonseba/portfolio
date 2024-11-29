@@ -6,7 +6,7 @@ const projects: Project[] = [
   {
     id: "smvd-doc",
     title: "Filling out PDF documents",
-    type: "Figma Prototype",
+    type: "Prototype",
     year: 2024,
     company: "Smooved",
     media: {
@@ -15,9 +15,20 @@ const projects: Project[] = [
     },
   },
   {
+    id: "smvd-socials",
+    title: "Updated Social Posts",
+    type: "Visual Design",
+    year: 2024,
+    company: "Smooved",
+    media: {
+      type: "image",
+      src: "/img/design/socials.png",
+    },
+  },
+  {
     id: "smvd-companion",
     title: "Entering meter info",
-    type: "Play Prototype",
+    type: "Prototype",
     year: 2024,
     company: "Smooved",
     media: {
