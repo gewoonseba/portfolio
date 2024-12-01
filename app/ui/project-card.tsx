@@ -44,7 +44,7 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.type} ↗
           </span>
         </div>
-        <p className="uppercase tracking-tight ~text-sm/base">
+        <p className="tracking-tight ~text-sm/base">
           {project.year} · {project.company}
         </p>
       </Link>
@@ -60,7 +60,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.type}
         </span>
       </div>
-      <p className="uppercase tracking-tight ~text-sm/base">
+      <p className="tracking-tight ~text-sm/base">
         {project.year} · {project.company}
       </p>
     </div>
