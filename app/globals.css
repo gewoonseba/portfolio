@@ -37,23 +37,23 @@
   }
 
   h1 {
-    @apply text-huge ~-ml-0/4 font-semibold leading-none tracking-tight [text-align-last:justify];
+    @apply text-huge font-semibold leading-none tracking-tight ~-ml-0/4 [text-align-last:justify];
     font-feature-settings: "cv10";
   }
 
   h2 {
-    @apply ~text-sm/base uppercase tracking-tight;
+    @apply uppercase tracking-tight ~text-sm/base;
   }
 
   h3 {
-    @apply ~text-lg/xl font-semibold tracking-tight;
+    @apply font-semibold tracking-tight ~text-lg/xl;
   }
 
   h4 {
-    @apply ~text-base/md font-semibold;
+    @apply font-semibold ~text-base/md;
   }
 
   p {
-    @apply ~text-base/md text-justify text-neutral-200;
+    @apply text-justify text-neutral-200 ~text-base/md;
   }
 }
