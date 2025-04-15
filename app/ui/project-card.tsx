@@ -34,35 +34,44 @@ export function ProjectCard({ project }: { project: Project }) {
     </div>
   );
 
-  if (project.link) {
-    return (
-      <Link href={project.link} className="group block">
-        <MediaContent />
-        <div className="flex items-center justify-between">
-          <h3 className="~text-base/md">{project.title}</h3>
-          <span className="uppercase tracking-tight text-neutral-200 transition-all duration-150 ~text-sm/base group-hover:underline">
-            {project.type} ↗
-          </span>
-        </div>
-        <p className="tracking-tight ~text-sm/base">
-          {project.year} · {project.company}
-        </p>
-      </Link>
-    );
-  }
-
-  return (
-    <div>
+  const Content = () => (
+    <>
       <MediaContent />
       <div className="flex items-center justify-between">
         <h3 className="~text-base/md">{project.title}</h3>
-        <span className="uppercase tracking-tight text-neutral-200 duration-150 ~text-sm/base">
-          {project.type}
+        <span className="uppercase tracking-tight text-neutral-200 transition-all duration-150 ~text-sm/base group-hover:underline">
+          {project.type}{" "}
+          {project.link || project.id === "smvd-refresh" ? "→" : ""}
         </span>
       </div>
       <p className="tracking-tight ~text-sm/base">
         {project.year} · {project.company}
       </p>
+    </>
+  );
+
+  // External link case
+  if (project.link) {
+    return (
+      <Link href={project.link} className="group block">
+        <Content />
+      </Link>
+    );
+  }
+
+  // Internal project page case (only for smvd-refresh for now)
+  if (project.id === "smvd-refresh") {
+    return (
+      <Link href={`/project/${project.id}`} className="group block">
+        <Content />
+      </Link>
+    );
+  }
+
+  // Default case: no link
+  return (
+    <div className="block">
+      <Content />
     </div>
   );
 }

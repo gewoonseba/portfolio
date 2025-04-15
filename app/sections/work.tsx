@@ -2,7 +2,7 @@
 
 import { Project, ProjectCard } from "@/app/ui/project-card";
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     id: "smvd-refresh",
     title: "Smooved UI Refresh",
