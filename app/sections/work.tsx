@@ -4,6 +4,17 @@ import { Project, ProjectCard } from "@/app/ui/project-card";
 
 const projects: Project[] = [
   {
+    id: "smvd-refresh",
+    title: "Smooved UI Refresh",
+    type: "Product Design",
+    year: 2025,
+    company: "Smooved",
+    media: {
+      type: "image",
+      src: "/img/design/ui-refresh.png",
+    },
+  },
+  {
     id: "smvd-doc",
     title: "Filling out PDF documents",
     type: "Prototype",
