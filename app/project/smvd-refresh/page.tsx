@@ -4,12 +4,12 @@ import Link from "next/link";
 export const metadata = {
   title: "Smooved UI Refresh | Gewoon Seba",
   description:
-    "A complete visual overhaul of the Smooved platform, focusing on clarity and consistency.",
+    "A UI refresh of the Smooved Mover dashboard, built with Tailwind and DaisyUI.",
 };
 
 export default function SmooveedUIRefreshPage() {
   return (
-    <article className="mx-auto max-w-screen-xl">
+    <article className="max-w-none">
       <div className="~py-4/10">
         <Link
           href="/"
@@ -17,7 +17,7 @@ export default function SmooveedUIRefreshPage() {
         >
           ← Back to overview
         </Link>
-        <h1 className="mt-4 text-huge">Smooved UI Refresh</h1>
+        <h1 className="text-2xl max-w-prose">Refreshed Mover Dashboard</h1>
       </div>
 
       <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2 shadow-border">

@@ -10,8 +10,8 @@ export const projects: Project[] = [
     year: 2025,
     company: "Smooved",
     media: {
-      type: "image",
-      src: "/img/design/ui-refresh.png",
+      type: "video",
+      src: "/img/design/mover-redesign/mover-redesign.mp4",
     },
   },
   {
