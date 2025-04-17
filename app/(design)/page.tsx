@@ -1,6 +1,5 @@
 import Work from "@/app/sections/work";
 import { ContactButton } from "@/app/ui/button/contact-button";
-import { LinkRow } from "@/app/ui/link-row";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -17,8 +16,7 @@ export default function Design() {
       </section>
       <section className="flex max-w-prose flex-col gap-2 ~py-4/10">
         <p>
-          Hello! I&apos;m Seba, a designer with a soft spot for code. Currently,
-          I&apos;m leading product at{" "}
+          I&apos;m Seba. I design things and I build things. Currently at{" "}
           <Link
             className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
             href="https://www.smooved.be"
@@ -36,24 +34,6 @@ export default function Design() {
       </section>
       <section className="~py-4/10">
         <Work />
-      </section>
-      <section className="~py-4/10">
-        <h2 className="pb-4">Experience</h2>
-        <LinkRow className="border-t" header="Head of Product" byline="Smooved">
-          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
-            current
-          </span>
-        </LinkRow>
-        <LinkRow header="Product Designer" byline="In The Pocket">
-          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
-            2021 - 2023
-          </span>
-        </LinkRow>
-        <LinkRow header="Full Stack Engineer" byline="AE">
-          <span className="uppercase tracking-tight text-neutral-100 ~text-sm/base">
-            2017 - 2021
-          </span>
-        </LinkRow>
       </section>
 
       <section className="flex w-full flex-col items-start ~py-4/10">

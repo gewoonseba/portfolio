@@ -54,6 +54,6 @@
   }
 
   p {
-    @apply text-justify text-neutral-200 ~text-base/md;
+    @apply text-neutral-200 ~text-base/md;
   }
 }
