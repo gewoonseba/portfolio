@@ -5,7 +5,7 @@ import { Project, ProjectCard } from "@/app/ui/project-card";
 export const projects: Project[] = [
   {
     id: "smvd-refresh",
-    title: "Mover Dashboard Refresh",
+    title: "Refreshed Mover Dashboard",
     type: "Case Study",
     year: 2025,
     company: "Smooved",
