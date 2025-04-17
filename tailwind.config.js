@@ -32,7 +32,7 @@ const config = {
       md: ["2rem", "2.4rem"],
       lg: ["2.4rem", "2.8rem"],
       xl: ["2.8rem", "3.2rem"],
-      "2xl": ["10rem", "12rem"],
+      "2xl": ["10rem", "10rem"],
       huge: ["clamp(4.8rem, 15.8vw + -0.33rem, 32.5rem)", "1"],
     },
     colors: {
