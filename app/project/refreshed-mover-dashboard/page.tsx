@@ -98,8 +98,8 @@ export default function SmooveedUIRefreshPage() {
                   We implemented a CSS-only design system with Tailwind and
                   DaisyUI to work with Angular. Rather than relying solely on
                   utility classes, we introduced semantic variables for color,
-                  typography, and spacing to complement Tailwind's utility-based
-                  methodology.
+                  typography, and spacing to complement Tailwind&apos;s
+                  utility-based methodology.
                 </p>
               </div>
             </section>
