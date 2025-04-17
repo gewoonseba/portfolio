@@ -5,8 +5,8 @@ import { Project, ProjectCard } from "@/app/ui/project-card";
 export const projects: Project[] = [
   {
     id: "smvd-refresh",
-    title: "Smooved UI Refresh",
-    type: "Product Design",
+    title: "Mover Dashboard Refresh",
+    type: "Case Study",
     year: 2025,
     company: "Smooved",
     media: {
@@ -26,17 +26,6 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "smvd-socials",
-    title: "Updated Social Posts",
-    type: "Visual Design",
-    year: 2024,
-    company: "Smooved",
-    media: {
-      type: "image",
-      src: "/img/design/socials.png",
-    },
-  },
-  {
     id: "smvd-companion",
     title: "Entering meter info",
     type: "Prototype",
@@ -50,38 +39,35 @@ export const projects: Project[] = [
   {
     id: "itp-izimi",
     title: "Izimi app and web platform",
-    type: "Case Study",
+    type: "Product Design",
     year: 2023,
     company: "In The Pocket",
     media: {
       type: "image",
       src: "/img/design/izimi.png",
     },
-    link: "https://www.inthepocket.com/work/izimi",
   },
   {
     id: "itp-tpvision",
     title: "TP Vision Wave web platform",
-    type: "Case Study",
+    type: "Product Design",
     year: 2022,
     company: "In The Pocket",
     media: {
       type: "image",
       src: "/img/design/tpvision.png",
     },
-    link: "https://www.inthepocket.com/work/tp-vision",
   },
   {
     id: "itp-multipharma",
     title: "Multipharma app",
-    type: "Case Study",
+    type: "Product Design",
     year: 2021,
     company: "In The Pocket",
     media: {
       type: "image",
       src: "/img/design/multipharma.png",
     },
-    link: "https://www.inthepocket.com/work/multipharma",
   },
 ];
 
