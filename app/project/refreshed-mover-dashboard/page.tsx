@@ -17,7 +17,7 @@ export default function SmooveedUIRefreshPage() {
         >
           ← Back to overview
         </Link>
-        <h1 className="text-2xl max-w-prose">Refreshed Mover Dashboard</h1>
+        <h1 className="max-w-prose text-2xl">Refreshed Mover Dashboard</h1>
       </div>
 
       <div className="relative mb-8 aspect-video w-full overflow-hidden rounded-2 shadow-border">
@@ -37,11 +37,11 @@ export default function SmooveedUIRefreshPage() {
             <h2 className="border-b border-neutral-100/5 pb-2">About</h2>
             <div className="mt-4 space-y-4">
               <p>
-                As Smooved's product offering grew, we needed to establish a
-                more consistent and scalable design system. This refresh project
-                aimed to improve the visual hierarchy, enhance readability, and
-                create a more cohesive experience across all platform
-                touchpoints.
+                As Smooved&apos;s product offering grew, we needed to establish
+                a more consistent and scalable design system. This refresh
+                project aimed to improve the visual hierarchy, enhance
+                readability, and create a more cohesive experience across all
+                platform touchpoints.
               </p>
               <p>
                 The new design system introduces a refined color palette,
