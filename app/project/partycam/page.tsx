@@ -81,7 +81,6 @@ export default function PartycamPage() {
                     GitHub ↗
                   </Link>
                 </p>
-                p
               </div>
             </section>
           </div>
