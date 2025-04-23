@@ -6,13 +6,26 @@ export const projects: Project[] = [
   {
     id: "smvd-refresh",
     title: "Refreshed Mover Dashboard",
-    type: "Case Study",
+    type: "Showcase",
     year: 2025,
     company: "Smooved",
     media: {
       type: "video",
       src: "/img/design/mover-redesign/mover-redesign.mp4",
     },
+    link: "/project/refreshed-mover-dashboard",
+  },
+  {
+    id: "partycam",
+    title: "PartyCam",
+    type: "Showcase",
+    year: 2025,
+    company: "Personal",
+    media: {
+      type: "image",
+      src: "/img/design/partycam/partycam-cover.png",
+    },
+    link: "/project/partycam",
   },
   {
     id: "smvd-doc",
