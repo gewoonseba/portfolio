@@ -130,6 +130,7 @@ export default function PartycamPage() {
             src="/img/design/partycam/partycam-05.png"
             alt="Mockups of the invitation"
             fill
+            className="object-cover"
           />
         </div>
         <div className="relative row-span-2 overflow-hidden rounded-1 bg-neutral-800 shadow-border">
@@ -137,6 +138,7 @@ export default function PartycamPage() {
             src="/img/design/partycam/partycam-02.png"
             alt="A mobile screen of the PartyCam app"
             fill
+            className="object-cover"
           />
         </div>
         <div className="relative aspect-square overflow-hidden rounded-1 bg-neutral-800 shadow-border">
@@ -144,6 +146,7 @@ export default function PartycamPage() {
             src="/img/design/partycam/partycam-03.png"
             alt="The wordmark of the party"
             fill
+            className="object-cover"
           />
         </div>
         <div className="relative aspect-square overflow-hidden rounded-1 bg-neutral-800 shadow-border md:col-span-2 md:aspect-auto">
@@ -151,6 +154,7 @@ export default function PartycamPage() {
             src="/img/design/partycam/partycam-04.png"
             alt="A mobile screen of the PartyCam app"
             fill
+            className="object-cover"
           />
         </div>
       </div>
