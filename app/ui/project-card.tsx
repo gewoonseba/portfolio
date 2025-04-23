@@ -59,15 +59,6 @@ export function ProjectCard({ project }: { project: Project }) {
     );
   }
 
-  // Internal project page case (only for smvd-refresh for now)
-  if (project.id === "smvd-refresh") {
-    return (
-      <Link href={`/project/refreshed-mover-dashboard`} className="group block">
-        <Content />
-      </Link>
-    );
-  }
-
   // Default case: no link
   return (
     <div className="block">

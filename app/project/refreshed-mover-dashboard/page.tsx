@@ -51,7 +51,7 @@ export default function SmooveedUIRefreshPage() {
               <h2 className="border-b border-neutral-100/5 pb-2">
                 Tools & Technologies
               </h2>
-              <div className="mt-4 grid grid-cols-2 space-y-4 ~gap-2/6">
+              <div className="mt-4 grid grid-cols-2 items-start ~gap-2/6">
                 <p>
                   Figma <br />
                   Cursor <br />
