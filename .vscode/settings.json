@@ -1,7 +1,12 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "files.associations": {
-      "*.css": "tailwindcss"
-    },
-    "explorer.sortOrder": "filesFirst"
-  }
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ]
+}
