@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 export default function Design() {
   return (
     <div>
-      <section className="~py-4/10">
+      <section className="py-10">
         <h1>Gewoon Seba.</h1>
       </section>
-      <section className="flex max-w-prose flex-col gap-2 ~py-4/10">
+      <section className="flex max-w-prose flex-col gap-2 py-10">
         <p>
           I&apos;m Seba. I design things and I build things. Currently at{" "}
           <Link
@@ -32,11 +32,11 @@ export default function Design() {
         </p>
         <p>Nice to meet you.</p>
       </section>
-      <section className="~py-4/10">
+      <section className="py-10">
         <Work />
       </section>
 
-      <section className="flex w-full flex-col items-start ~py-4/10">
+      <section className="flex w-full flex-col items-start py-10">
         <h2 className="w-full border-b border-neutral-100/5 pb-4">
           Let&apos;s talk
         </h2>

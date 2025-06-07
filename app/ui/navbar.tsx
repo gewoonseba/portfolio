@@ -62,7 +62,7 @@ export default function Navbar({ className }: NavbarProps) {
                 key={path}
                 href={path}
                 className={classNames(
-                  "relative px-5 uppercase transition-all duration-200 ease-out ~text-base/md hover:text-neutral-100",
+                  "relative px-5 uppercase transition-all duration-200 ease-out text-md hover:text-neutral-100",
                   pathname === path ? "text-neutral-100" : "text-neutral-200",
                 )}
               >

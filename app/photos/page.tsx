@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 export default function Photos() {
   return (
-    <section className="grid grid-cols-1 items-center gap-4 ~py-4/10 md:grid-cols-3">
+    <section className="grid grid-cols-1 items-center gap-4 py-10 md:grid-cols-3">
       <div>
         <Image
           className="h-auto max-w-full rounded-1"

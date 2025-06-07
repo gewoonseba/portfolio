@@ -18,7 +18,7 @@ export function LinkRow({ className, header, byline, children }: LinkRowProps) {
     >
       <div className="flex-1">
         <h3>{header}</h3>
-        <p className="uppercase ~text-sm/base">{byline}</p>
+        <p className="uppercase text-base">{byline}</p>
       </div>
       <div className="ml-4 flex-shrink-0">{children}</div>
     </div>

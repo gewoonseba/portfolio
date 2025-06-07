@@ -38,13 +38,13 @@ export function ProjectCard({ project }: { project: Project }) {
     <>
       <MediaContent />
       <div className="flex items-center justify-between">
-        <h3 className="~text-base/md">{project.title}</h3>
-        <span className="uppercase tracking-tight text-neutral-200 transition-all duration-150 ~text-sm/base group-hover:underline">
+        <h3 className="text-md">{project.title}</h3>
+        <span className="uppercase tracking-tight text-neutral-200 transition-all duration-150 text-base group-hover:underline">
           {project.type}{" "}
           {project.link || project.id === "smvd-refresh" ? "→" : ""}
         </span>
       </div>
-      <p className="tracking-tight ~text-sm/base">
+      <p className="tracking-tight text-base">
         {project.year} · {project.company}
       </p>
     </>

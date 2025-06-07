@@ -26,7 +26,7 @@ export const Footer = ({ className }: FooterProps) => {
             key={path}
             href={path}
             className={classNames(
-              "relative uppercase transition-all duration-200 ease-out ~text-sm/base hover:text-neutral-100",
+              "relative uppercase transition-all duration-200 ease-out text-base hover:text-neutral-100",
               pathname === path ? "text-neutral-100" : "text-neutral-200",
             )}
           >
@@ -40,7 +40,7 @@ export const Footer = ({ className }: FooterProps) => {
           </Link>
         ))}
       </nav>
-      <p className="row-start-3 my-auto justify-self-center text-center uppercase ~text-sm/base md:row-start-auto">
+      <p className="row-start-3 my-auto justify-self-center text-center uppercase text-base md:row-start-auto">
         © {new Date().getFullYear()}{" "}
         <span className="whitespace-nowrap">Gewoon Seba</span>
       </p>

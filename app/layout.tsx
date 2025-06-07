@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${interLocal.variable}`}>
-      <body className="~px-2/5 min-h-dvh max-w-screen-3xl text-base 3xl:mx-auto">
+      <body className="px-5 min-h-dvh max-w-screen-3xl text-base 3xl:mx-auto">
         <Navbar />
         <main>{children}</main>
         <Footer className="sticky top-full" />
