@@ -1,9 +1,8 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-  --font-sans:
-    Inter, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: Inter, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --text-sm: 0.9375rem;
   --text-sm--line-height: 1.6;
@@ -11,7 +10,8 @@
   --text-base: 1.125rem;
   --text-base--line-height: 1.6;
 
-  --text-huge: clamp(3.6rem, -0.353rem + 16vw, 19rem);
+  /* Responsive text that scales to container width */
+  --text-huge: clamp(2rem, 20cqw, 18rem);
   --text-huge--line-height: 1;
 }
 
