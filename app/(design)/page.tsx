@@ -1,3 +1,4 @@
+import Hero from "@/app/components/typography/hero";
 import Work from "@/app/sections/work";
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { Metadata } from "next";
@@ -12,7 +13,7 @@ export default function Design() {
   return (
     <div>
       <section className="py-10">
-        <h1>Gewoon Seba.</h1>
+        <Hero />
       </section>
       <section className="flex max-w-prose flex-col gap-2 py-10">
         <p>
