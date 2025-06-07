@@ -1,4 +1,3 @@
-import fluid, { extract } from "fluid-tailwind";
 import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
@@ -12,7 +11,6 @@ const config = {
       "./components/**/*.{js,ts,jsx,tsx,mdx}",
       "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
-    extract,
   },
   theme: {
     fluid: ({ theme }) => ({
@@ -99,7 +97,6 @@ const config = {
     },
   },
   plugins: [
-    fluid,
     //adding in newer CSS features: https://www.youtube.com/watch?v=jCqtngrL2pA
     plugin(({ addVariant, addUtilities }) => {
       addVariant("starting", "@starting-style");
