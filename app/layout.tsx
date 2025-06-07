@@ -1,5 +1,5 @@
-import { Footer } from "@/app/ui/footer";
-import Navbar from "@/app/ui/navbar";
+import { Footer } from "@/app/components/nav/footer";
+import Navbar from "@/app/components/nav/navbar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
