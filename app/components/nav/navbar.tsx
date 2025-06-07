@@ -9,26 +9,35 @@ import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+
 export interface NavbarProps {
   className?: string;
 }
 
 export default function Navbar({ className }: NavbarProps) {
   const pathname = usePathname();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Common slide-in transition pattern used throughout the navbar
+  // Responsive transitions (for desktop nav items)
   const slideInTransition = classNames(
+    "transition-all duration-300",
     "translate-y-8 opacity-0 blur-md",
     "md:translate-y-0 md:opacity-100 md:blur-none md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
-    "transition-[transform, display] transition-discrete duration-300",
   );
 
   const slideOutTransition = classNames(
+    "transition-all duration-300",
     "translate-y-0 opacity-100 blur-none",
     "md:translate-y-8 md:opacity-0 md:blur-md md:starting:translate-y-0 md:starting:opacity-100 md:starting:blur-none",
-    "transition-[transform, display] transition-discrete duration-300",
+  );
+
+  // State-based transitions (for mobile menu items)
+  const mobileMenuTransition = classNames(
+    "transition-all duration-300",
+    "starting:translate-y-8 starting:opacity-0 starting:blur-md",
+    isMenuOpen
+      ? "translate-y-0 opacity-100 blur-none"
+      : "-translate-y-8 opacity-0 blur-md",
   );
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -94,10 +103,19 @@ export default function Navbar({ className }: NavbarProps) {
             "flex w-full flex-grow flex-col justify-between py-4 pr-2 pl-5",
           )}
         >
-          <NavLinks onNavClicked={toggleMenu} variant="mobile-menu" />
-          <div className="flex items-center justify-between">
-            <ContactButton />
-            <SocialLinks />
+          <NavLinks
+            onNavClicked={toggleMenu}
+            variant="mobile-menu"
+            className={mobileMenuTransition}
+          />
+          <div
+            className={classNames(
+              "flex items-center justify-between",
+              mobileMenuTransition,
+            )}
+          >
+            <ContactButton className={mobileMenuTransition} />
+            <SocialLinks className={mobileMenuTransition} />
           </div>
         </div>
       </div>
