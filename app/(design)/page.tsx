@@ -1,4 +1,4 @@
-import Hero from "@/app/components/typography/hero";
+import { AutoSizedText } from "@/app/components/auto-sized-text";
 import Work from "@/app/sections/work";
 import { ContactButton } from "@/app/ui/button/contact-button";
 import { Metadata } from "next";
@@ -12,14 +12,18 @@ export const metadata: Metadata = {
 export default function Design() {
   return (
     <div>
-      <section className="py-10">
-        <Hero />
+      <section className="w-full py-10">
+        <AutoSizedText>
+          <h1 className="text-primary leading-none font-semibold tracking-tighter whitespace-nowrap">
+            Gewoon Seba.
+          </h1>
+        </AutoSizedText>
       </section>
       <section className="flex max-w-prose flex-col gap-2 py-10">
         <p>
           I&apos;m Seba. I design things and I build things. Currently at{" "}
           <Link
-            className="whitespace-nowrap transition-all duration-150 hover:text-primary hover:underline"
+            className="hover:text-primary whitespace-nowrap transition-all duration-150 hover:underline"
             href="https://www.smooved.be"
           >
             Smooved ↗
@@ -38,20 +42,20 @@ export default function Design() {
       </section>
 
       <section className="flex w-full flex-col items-start py-10">
-        <h2 className="w-full border-b border-secondary pb-4">
+        <h2 className="border-secondary w-full border-b pb-4">
           Let&apos;s talk
         </h2>
         <p className="max-w-prose pt-4">
           For any inquiries, send me an e-mail over at{" "}
           <Link
-            className="whitespace-nowrap transition-all duration-150 hover:text-primary hover:underline"
+            className="hover:text-primary whitespace-nowrap transition-all duration-150 hover:underline"
             href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
           >
             seba@gewoonseba.com ↗
           </Link>{" "}
           or book a meeting with me on{" "}
           <Link
-            className="whitespace-nowrap transition-all duration-150 hover:text-primary hover:underline"
+            className="hover:text-primary whitespace-nowrap transition-all duration-150 hover:underline"
             href="https://cal.com/gewoonseba/30min"
           >
             cal.com ↗

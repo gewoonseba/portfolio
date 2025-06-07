@@ -18,7 +18,7 @@ export function AutoSizedText({ children }: Props) {
   const fontSizeUpperBound = useRef<number>(0);
 
   useLayoutEffect(() => {
-    const childElement = childRef.current; // This is `SizedChild`
+    const childElement = childRef.current; // This is the text container
     const parentElement = childRef.current?.parentElement; // This is the parent of `AutoSizedText`
 
     if (!childElement || !parentElement) {
@@ -49,9 +49,9 @@ export function AutoSizedText({ children }: Props) {
       // The resize handler passes the parent's dimensions, so we don't have to get the bounding box
       const parentDimensions = entry.contentRect;
 
-      // Reset the iteration parameters
+      // Reset the iteration parameters - use a large upper bound since we're not constrained by height
       fontSizeLowerBound.current = 0;
-      fontSizeUpperBound.current = parentDimensions.height;
+      fontSizeUpperBound.current = 500; // Large upper bound for width-only fitting
 
       let iterationCount = 0;
 
@@ -62,20 +62,13 @@ export function AutoSizedText({ children }: Props) {
         const childDimensions = getElementDimensions(childElement);
 
         const widthDifference = parentDimensions.width - childDimensions.width;
-        const heightDifference =
-          parentDimensions.height - childDimensions.height;
 
-        const childFitsIntoParent =
-          heightDifference >= 0 && widthDifference >= 0;
+        // Only check width fit, ignore height completely
+        const childFitsIntoParent = widthDifference >= 0;
         const childIsWithinWidthTolerance =
           Math.abs(widthDifference) <= MAXIMUM_DIFFERENCE;
-        const childIsWithinHeightTolerance =
-          Math.abs(heightDifference) <= MAXIMUM_DIFFERENCE;
 
-        if (
-          childFitsIntoParent &&
-          (childIsWithinWidthTolerance || childIsWithinHeightTolerance)
-        ) {
+        if (childFitsIntoParent && childIsWithinWidthTolerance) {
           // Stop the iteration, we've found a fit!
           break;
         }
@@ -105,18 +98,13 @@ export function AutoSizedText({ children }: Props) {
 
     let newFontSize;
 
-    if (
-      childDimensions.width > parentDimensions.width ||
-      childDimensions.height > parentDimensions.height
-    ) {
-      // The element is bigger than the parent, scale down
+    // Only consider width for adjustments, ignore height completely
+    if (childDimensions.width > parentDimensions.width) {
+      // The element is wider than the parent, scale down
       newFontSize = (fontSizeLowerBound.current + fontSize.current) / 2;
       fontSizeUpperBound.current = fontSize.current;
-    } else if (
-      childDimensions.width < parentDimensions.width ||
-      childDimensions.height < parentDimensions.height
-    ) {
-      // The element is smaller than the parent, scale up
+    } else if (childDimensions.width < parentDimensions.width) {
+      // The element is narrower than the parent, scale up
       newFontSize = (fontSizeUpperBound.current + fontSize.current) / 2;
       fontSizeLowerBound.current = fontSize.current;
     }

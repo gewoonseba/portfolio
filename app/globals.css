@@ -9,10 +9,6 @@
 
   --text-base: 1.125rem;
   --text-base--line-height: 1.6;
-
-  /* Responsive text that scales to container width */
-  --text-huge: clamp(2rem, 20cqw, 18rem);
-  --text-huge--line-height: 1;
 }
 
 /* MARK: - Layout */
