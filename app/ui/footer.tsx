@@ -26,14 +26,14 @@ export const Footer = ({ className }: FooterProps) => {
             key={path}
             href={path}
             className={classNames(
-              "relative uppercase transition-all duration-200 ease-out text-base hover:text-neutral-100",
-              pathname === path ? "text-neutral-100" : "text-neutral-200",
+                      "relative uppercase transition-all duration-200 ease-out text-base hover:text-primary",
+        pathname === path ? "text-primary" : "text-secondary",
             )}
           >
             {label}
             <span
               className={classNames(
-                "absolute inset-x-0 top-[48%] block h-0.5 bg-neutral-100 transition-all duration-200",
+                "absolute inset-x-0 top-[48%] block h-0.5 bg-primary-inverse transition-all duration-200",
                 pathname === path ? "max-w-full" : "max-w-0",
               )}
             ></span>

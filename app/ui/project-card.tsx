@@ -19,13 +19,13 @@ export type Project = {
 
 export function ProjectCard({ project }: { project: Project }) {
   const MediaContent = () => (
-    <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-1 shadow-border">
+    <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-md text-primary border-secondary">
       {project.media.type === "image" ? (
         <Image
           src={project.media.src}
           alt={project.title}
           fill
-          className="bg-neutral-800 object-cover"
+          className="bg-btn-secondary-hover object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       ) : (
@@ -38,8 +38,8 @@ export function ProjectCard({ project }: { project: Project }) {
     <>
       <MediaContent />
       <div className="flex items-center justify-between">
-        <h3 className="text-md">{project.title}</h3>
-        <span className="uppercase tracking-tight text-neutral-200 transition-all duration-150 text-base group-hover:underline">
+        <h3 className="text-md text-primary">{project.title}</h3>
+                  <span className="uppercase tracking-tight text-secondary transition-all duration-150 text-base group-hover:underline">
           {project.type}{" "}
           {project.link || project.id === "smvd-refresh" ? "→" : ""}
         </span>

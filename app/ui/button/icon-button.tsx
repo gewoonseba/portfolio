@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface IconButtonProps {
   children: ReactNode;
@@ -15,7 +15,7 @@ export const IconButton = ({
   return (
     <button
       className={classNames(
-        "flex size-10 shrink-0 items-center justify-center rounded-2 transition-colors duration-150 hover:bg-neutral-800 active:bg-neutral-800",
+        "flex size-10 shrink-0 items-center justify-center rounded-md transition-colors duration-150 hover:bg-btn-secondary-hover active:bg-btn-secondary-hover cursor-pointer",
         className,
       )}
       onClick={onClick}

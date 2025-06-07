@@ -19,7 +19,7 @@ export default function Design() {
         <p>
           I&apos;m Seba. I design things and I build things. Currently at{" "}
           <Link
-            className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
+            className="whitespace-nowrap transition-all duration-150 hover:text-primary hover:underline"
             href="https://www.smooved.be"
           >
             Smooved ↗
@@ -38,20 +38,20 @@ export default function Design() {
       </section>
 
       <section className="flex w-full flex-col items-start py-10">
-        <h2 className="w-full border-b border-neutral-100/5 pb-4">
+        <h2 className="w-full border-b border-secondary pb-4">
           Let&apos;s talk
         </h2>
         <p className="max-w-prose pt-4">
           For any inquiries, send me an e-mail over at{" "}
           <Link
-            className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
+            className="whitespace-nowrap transition-all duration-150 hover:text-primary hover:underline"
             href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
           >
             seba@gewoonseba.com ↗
           </Link>{" "}
           or book a meeting with me on{" "}
           <Link
-            className="whitespace-nowrap transition-all duration-150 hover:text-neutral-100 hover:underline"
+            className="whitespace-nowrap transition-all duration-150 hover:text-primary hover:underline"
             href="https://cal.com/gewoonseba/30min"
           >
             cal.com ↗

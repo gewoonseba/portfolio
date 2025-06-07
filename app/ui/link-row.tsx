@@ -12,7 +12,7 @@ export function LinkRow({ className, header, byline, children }: LinkRowProps) {
   return (
     <div
       className={classNames(
-        "flex items-center justify-between border-b border-neutral-100/5 py-4",
+        "flex items-center justify-between border-b border-secondary py-4",
         className,
       )}
     >

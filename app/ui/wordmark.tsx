@@ -9,7 +9,7 @@ export function WordMark({ className }: LogoProps) {
       width="auto"
       height="1.9rem"
       viewBox="0 0 194 25"
-      fill="none"
+      fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

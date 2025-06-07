@@ -3,10 +3,11 @@ import { IconButton } from "@/app/ui/button/icon-button";
 interface MenuButtonProps {
   onClick?: () => void;
   isOpen: boolean;
+  className?: string;
 }
-export const MenuButton = ({ onClick, isOpen }: MenuButtonProps) => {
+export const MenuButton = ({ onClick, isOpen, className }: MenuButtonProps) => {
   return (
-    <IconButton onClick={onClick}>
+    <IconButton onClick={onClick} className={className}>
       <svg
         width="24px"
         height="24px"

@@ -87,7 +87,7 @@ export const projects: Project[] = [
 export default function Work() {
   return (
     <section className="md:py-24 py-16">
-      <h2 className="text-3xl font-bold border-b border-neutral-100/5 pb-3">
+              <h2 className="text-3xl font-bold border-b border-secondary pb-3">
         Work
       </h2>
       <div className="grid grid-cols-1 gap-12 pt-5 md:grid-cols-2 3xl:grid-cols-3">

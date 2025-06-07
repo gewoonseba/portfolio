@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface IconLinkProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ export const IconLink = ({ children, className, href }: IconLinkProps) => {
   return (
     <Link
       className={classNames(
-        "flex size-10 shrink-0 items-center justify-center rounded-2 transition-colors duration-150 hover:bg-neutral-800",
+        "flex size-10 shrink-0 items-center justify-center rounded-md transition-colors duration-150 hover:bg-btn-secondary-hover",
         className,
       )}
       href={href}

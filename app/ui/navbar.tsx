@@ -40,20 +40,20 @@ export default function Navbar({ className }: NavbarProps) {
     <header className={classNames("sticky top-0 z-50 h-18 py-2")}>
       <div
         className={classNames(
-          "sticky top-0 z-50 flex flex-col items-start overflow-hidden rounded-3 bg-neutral-900/80 shadow-border backdrop-blur-lg transition-all duration-300 ease-in-out",
+          "sticky top-0 z-50 flex flex-col items-start overflow-hidden bg-primary/80 shadow-border backdrop-blur-lg border border-secondary transition-all duration-300 ease-in-ou rounded-xl",
           isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-14",
         )}
       >
         <div className="flex h-14 w-full shrink-0 justify-between">
           <div className="ml-5 mt-2 flex h-10 items-center">
             <Link href="/" onClick={closeMenu}>
-              <WordMark className="pr-10 md:pr-0" />
+              <WordMark className="pr-10 md:pr-0 text-primary h-5" />
             </Link>
           </div>
           <nav
             className={classNames(
               "my-auto hidden translate-y-8 opacity-0 blur-md transition-discrete",
-              "md:flex md:translate-y-0 md:opacity-100 md:blur-0 md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
+              "md:flex md:translate-y-0 md:opacity-100 md:blur-none md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
               "transition-[display, opacity, transform, blur] duration-300",
             )}
           >
@@ -62,14 +62,14 @@ export default function Navbar({ className }: NavbarProps) {
                 key={path}
                 href={path}
                 className={classNames(
-                  "relative px-5 uppercase transition-all duration-200 ease-out text-md hover:text-neutral-100",
-                  pathname === path ? "text-neutral-100" : "text-neutral-200",
+                              "relative px-5 uppercase transition-all duration-200 ease-out text-md hover:text-primary",
+            pathname === path ? "text-primary" : "text-secondary",
                 )}
               >
                 {label}
                 <span
                   className={classNames(
-                    "absolute inset-x-5 top-[48%] block h-0.5 bg-neutral-100 transition-all duration-200",
+                    "absolute inset-x-5 top-[48%] block h-0.5 bg-primary-inverse transition-all duration-200",
                     pathname === path ? "max-w-full" : "max-w-0",
                   )}
                 ></span>
@@ -78,17 +78,17 @@ export default function Navbar({ className }: NavbarProps) {
           </nav>
           <div
             className={classNames(
-              "absolute right-2 top-2 block translate-y-0 opacity-100 blur-0 starting:-translate-y-8 starting:opacity-0 starting:blur-md",
+              "absolute right-2 top-2 block translate-y-0 opacity-100 blur-none starting:-translate-y-8 starting:opacity-0 starting:blur-md",
               "md:hidden md:-translate-y-8 md:opacity-0 md:blur-md",
               "transition-[transform, display] duration-300 transition-discrete",
             )}
           >
-            <MenuButton onClick={() => toggleMenu()} isOpen={isMenuOpen} />
+            <MenuButton onClick={() => toggleMenu()} isOpen={isMenuOpen} className="text-primary" />
           </div>
           <ContactButton
             className={classNames(
               "my-auto mr-5 hidden translate-y-8 opacity-0 blur-md",
-              "md:block md:translate-y-0 md:opacity-100 md:blur-0 md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
+              "md:block md:translate-y-0 md:opacity-100 md:blur-none md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
               "transition-[opacity, transform, display] duration-300 transition-discrete",
             )}
           />
@@ -107,17 +107,17 @@ export default function Navbar({ className }: NavbarProps) {
                 href={path}
                 onClick={() => toggleMenu()}
                 className={classNames(
-                  "relative text-xl uppercase transition-all duration-200 ease-out hover:text-neutral-100",
-                  pathname === path ? "text-neutral-100" : "text-neutral-200",
+                              "relative text-xl uppercase transition-all duration-200 ease-out hover:text-primary",
+            pathname === path ? "text-primary" : "text-secondary",
                   isMenuOpen
-                    ? "translate-y-0 opacity-100 blur-0"
+                    ? "translate-y-0 opacity-100 blur-none"
                     : "-translate-y-8 opacity-0 blur-md",
                 )}
               >
                 {label}
                 <span
                   className={classNames(
-                    "absolute top-[48%] block h-[0.2rem] bg-neutral-100",
+                    "absolute top-[48%] block h-[0.2rem] bg-primary-inverse",
                     pathname === path ? "w-full" : "w-0",
                   )}
                 ></span>
@@ -127,7 +127,7 @@ export default function Navbar({ className }: NavbarProps) {
           <div
             className={classNames(
               "flex items-center justify-between transition-all duration-200",
-              isMenuOpen ? "opacity-100 blur-0" : "opacity-0 blur-md",
+              isMenuOpen ? "opacity-100 blur-none" : "opacity-0 blur-md",
             )}
           >
             <ContactButton />

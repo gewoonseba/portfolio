@@ -1,77 +1,73 @@
 @import 'tailwindcss';
 
-@config '../tailwind.config.js';
+@theme {
+  --font-sans:
+    Inter, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
 
-/*
-  The default border color has changed to `currentcolor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.6;
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.6;
+
+  --text-huge: clamp(3.6rem, -0.353rem + 16vw, 19rem);
+  --text-huge--line-height: 1;
 }
 
-/* width */
-/* ::-webkit-scrollbar {
-  @apply w-2;
-} */
+/* MARK: - Layout */
+@theme {
+  --breakpoint-3xl: 120rem;
+}
 
-/* Track */
-/* ::-webkit-scrollbar-track {
-  @apply bg-neutral-900;
-} */
+/* MARK: - Colors */
+@theme {
+  /* Remove tailiwnd colors, re-add "non-colors" */
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-inherit: inherit;
+  --color-initial: initial;
 
-/* Handle */
-/* ::-webkit-scrollbar-thumb {
-  @apply rounded-full bg-neutral-100/30;
-} */
+  --neutral-100: #f6f5f4;
+  --neutral-200: #adaaa7;
+  --neutral-800: #2b2b2b;
+  --neutral-900: #1e1d1c;
 
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-  @apply bg-neutral-100/40;
-} */
+  --neutral-100-5: color-mix(in srgb, var(--neutral-100) 5%, transparent);
 
-@layer base {
-  html {
-    @apply bg-neutral-900 font-sans font-normal text-neutral-100 antialiased;
-    font-size: 62.5%;
-    font-optical-sizing: auto;
-    scrollbar-gutter: stable both-sides;
-  }
+  --background-color-primary: var(--neutral-900);
 
-  h1,
-  h2,
-  h3 {
-    @apply text-neutral-100;
-  }
+  --background-color-primary-inverse: var(--neutral-100);
 
-  h1 {
-    @apply -ml-2 text-huge font-semibold leading-none tracking-tight [text-align-last:justify];
-    font-feature-settings: "cv10";
-  }
+  --background-color-btn-secondary-hover: var(--neutral-800);
 
-  h2 {
-    @apply text-base uppercase tracking-tight;
-  }
+  --text-color-primary: var(--neutral-100);
+  --text-color-secondary: var(--neutral-200);
 
-  h3 {
-    @apply text-xl font-semibold tracking-tight;
-  }
+  --text-color-primary-inverse: var(--neutral-900);
 
-  h4 {
-    @apply text-base font-semibold;
-  }
+  --border-color-primary: var(--neutral-100);
+  --border-color-secondary: var(--neutral-100-5);
+}
 
-  p {
-    @apply text-base text-neutral-200;
-  }
+/* MARK: - Custom utilities */
+@utility uppercase-tight {
+  @apply tracking-tight uppercase;
+}
+
+/* MARK: - Global Styles */
+html {
+  @apply antialiased;
+}
+
+h2 {
+  @apply uppercase-tight text-primary text-sm leading-none font-semibold;
+}
+
+p {
+  @apply text-secondary text-base;
+}
+
+section {
+  @apply py-4;
 }
