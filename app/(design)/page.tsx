@@ -21,7 +21,10 @@ export default function Design() {
       </section>
       <section className="flex max-w-prose flex-col gap-2 py-10">
         <p>
-          I&apos;m Seba. I design things and I build things. Currently at{" "}
+          <span className="text-primary">Hey! I&apos;m Seba</span> – I&apos;m a
+          product designer who thinks strategically, crafts beautiful
+          interfaces, and loves building what I design. I thrive in fast-paced
+          environments where I can wear multiple hats. Currently at{" "}
           <Link
             className="hover:text-primary whitespace-nowrap transition-all duration-150 hover:underline"
             href="https://www.smooved.be"
@@ -30,12 +33,6 @@ export default function Design() {
           </Link>
           .{" "}
         </p>
-        <p>
-          I believe that details matter, form is also a function and an
-          excellent product sells itself. I&apos;m driven by curiosity and a
-          desire to continually improve my craft.
-        </p>
-        <p>Nice to meet you.</p>
       </section>
       <section className="py-10">
         <Work />
@@ -46,7 +43,8 @@ export default function Design() {
           Let&apos;s talk
         </h2>
         <p className="max-w-prose pt-4">
-          For any inquiries, send me an e-mail over at{" "}
+          Got a cool project in mind? Just want to geek out about design? Drop
+          me a line at{" "}
           <Link
             className="hover:text-primary whitespace-nowrap transition-all duration-150 hover:underline"
             href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
