@@ -1,5 +1,5 @@
+import Work from "@/app/(design)/work";
 import ProseSection from "@/app/components/sections/prose-section";
-import Work from "@/app/components/sections/work";
 import AutoSizedText from "@/app/components/typography/auto-sized-text";
 import TextLink from "@/app/components/typography/text-link";
 import { Metadata } from "next";

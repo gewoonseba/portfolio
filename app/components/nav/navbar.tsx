@@ -2,9 +2,9 @@
 
 import ContactButton from "@/app/components/button/contact-button";
 import MenuButton from "@/app/components/button/menu-button";
+import { WordMark } from "@/app/components/icons/wordmark";
 import NavLinks from "@/app/components/nav/nav-links";
-import SocialLinks from "@/app/components/social-icons";
-import { WordMark } from "@/app/components/wordmark";
+import SocialLinks from "@/app/components/nav/social-icons";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

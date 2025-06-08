@@ -1,6 +1,6 @@
 "use client";
 
-import VideoAutoPlayer from "@/app/components/video-autoplayer";
+import VideoAutoPlayer from "@/app/components/data-view/video-autoplayer";
 import Image from "next/image";
 import Link from "next/link";
 
