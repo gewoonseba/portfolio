@@ -14,9 +14,7 @@ export default function Design() {
     <div className="w-full space-y-10">
       <section>
         <AutoSizedText>
-          <h1 className="text-primary leading-none font-semibold tracking-tighter whitespace-nowrap">
-            Gewoon Seba.
-          </h1>
+          <h1 className="heading-tighter">Gewoon Seba.</h1>
         </AutoSizedText>
       </section>
 

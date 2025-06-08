@@ -1,5 +1,6 @@
+import ProseSection from "@/app/components/sections/prose-section";
+import AutoSizedText from "@/app/components/typography/auto-sized-text";
 import Image from "next/image";
-import Link from "next/link";
 
 export const metadata = {
   title: "Smooved Leaver Dashboard UI Refresh | Gewoon Seba",
@@ -9,103 +10,72 @@ export const metadata = {
 
 export default function SmooveedUIRefreshPage() {
   return (
-    <article className="max-w-none pb-10">
+    <article>
       <div className="py-10">
-        <Link
-          href="/"
-          className="text-secondary hover:text-primary relative z-10 text-base tracking-tight uppercase transition-all duration-150 hover:underline"
-        >
-          ← Back to overview
-        </Link>
-        <h1 className="w-fit max-w-7xl text-[10rem] leading-[0.8] font-semibold 2xl:-ml-4">
-          Refreshed Mover Dashboard
-        </h1>
-        <p className="text-secondary text-xl tracking-tight uppercase">
-          Smooved
-        </p>
+        <AutoSizedText>
+          <h1 className="heading-tighter">Mover Dashboard</h1>
+        </AutoSizedText>
+        <p className="text-secondary uppercase-tight text-right">Smooved</p>
       </div>
 
       {/* MARK: Content*/}
-      <div className="flex flex-row justify-start pb-12">
-        <div className="grid max-w-screen-lg gap-10 py-10 md:grid-cols-[1fr,2fr]">
-          <div className="6 flex max-w-prose flex-col gap-10 pb-12 md:pb-0">
-            <section>
-              <h2 className="border-secondary border-b pb-2">TL;DR</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  Designing and building an all-new leaver web-app and refreshed
-                  UI for Smooved. Set up using Tailwind and DaisyUI.
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">Role</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  Product Designer <br />
-                  Design Engineer
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">
-                Tools & Technologies
-              </h2>
-              <div className="mt-4 grid grid-cols-2 items-start gap-6">
-                <p>
-                  Figma <br />
-                  Cursor <br />
-                  Angular <br />
-                </p>
-                <p>
-                  Tailwind <br />
-                  DaisyUI <br />
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">Timeline</h2>
-              <div className="mt-4 space-y-4">
-                <p>Early 2025</p>
-              </div>
-            </section>
+      <div className="md:grid-cols[1fr,2fr] mx-auto grid max-w-prose grid-cols-1 gap-5 pb-12">
+        <ProseSection title="TL;DR">
+          <p>
+            Designing and building an all-new dashboard and refreshed UI for
+            Smooved. Built using Tailwind and DaisyUI.
+          </p>
+        </ProseSection>
+
+        <ProseSection title="Role">
+          <p>
+            Product Designer <br />
+            Design Engineer
+          </p>
+        </ProseSection>
+
+        <ProseSection title="Tools & Technologies">
+          <div className="grid grid-cols-2 gap-4">
+            <p>
+              Figma <br />
+              Cursor <br />
+              Angular
+            </p>
+            <p>
+              Tailwind <br />
+              DaisyUI
+            </p>
           </div>
-          <div className="flex max-w-prose flex-col gap-10">
-            <section>
-              <h2 className="border-secondary border-b pb-2">Context</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  Smooved creates software to help movers manage their moving
-                  tasks, assisting new owners in setting up utility contracts
-                  and helping leavers close old ones. After feedback indicated
-                  leavers found the process confusing, we decided to redo their
-                  interface and align it with our recently refreshed brand
-                  identity.
-                </p>
-                <p>
-                  The UI refresh aimed to create a modern, distinctly Smooved
-                  experience while maintaining functionality at the forefront.
-                  We focused on mobile-friendly design since over 50% of our
-                  users access the web app on their phones.
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">
-                Technical Setup
-              </h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  We implemented a CSS-only design system with Tailwind and
-                  DaisyUI to work with Angular. Rather than relying solely on
-                  utility classes, we introduced semantic variables for color,
-                  typography, and spacing to complement Tailwind&apos;s
-                  utility-based methodology.
-                </p>
-              </div>
-            </section>
-          </div>
-        </div>
+        </ProseSection>
+
+        <ProseSection title="Timeline">
+          <p>Early 2025</p>
+        </ProseSection>
+
+        <ProseSection title="Context">
+          <p>
+            Smooved creates software to help movers manage their moving tasks,
+            assisting new owners in setting up utility contracts and helping
+            leavers close old ones. After feedback indicated leavers found the
+            process confusing, we decided to redo their interface and align it
+            with our recently refreshed brand identity.
+          </p>
+          <p>
+            The UI refresh aimed to create a modern, distinctly Smooved
+            experience while maintaining functionality at the forefront. We
+            focused on mobile-friendly design since over 50% of our users access
+            the web app on their phones.
+          </p>
+        </ProseSection>
+
+        <ProseSection title="Technical Setup">
+          <p>
+            We implemented a CSS-only design system with Tailwind and DaisyUI to
+            work with Angular. Rather than relying solely on utility classes, we
+            introduced semantic variables for color, typography, and spacing to
+            complement Tailwind&apos;s utility-based methodology.
+          </p>
+        </ProseSection>
       </div>
 
       {/* MARK: Images */}

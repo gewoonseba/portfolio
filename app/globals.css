@@ -52,6 +52,10 @@
   @apply tracking-tight uppercase;
 }
 
+@utility heading-tighter {
+  @apply leading-[0.8] font-semibold tracking-tighter whitespace-nowrap;
+}
+
 /* MARK: - Global Styles */
 html {
   @apply antialiased;
