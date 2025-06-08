@@ -32,8 +32,9 @@
   --neutral-100-5: color-mix(in srgb, var(--neutral-100) 5%, transparent);
 
   --background-color-primary: var(--neutral-900);
-
   --background-color-primary-inverse: var(--neutral-100);
+
+  --background-color-secondary: var(--neutral-800);
 
   --background-color-btn-secondary-hover: var(--neutral-800);
 

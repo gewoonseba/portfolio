@@ -89,7 +89,7 @@ export default function Work() {
   return (
     <section>
       <H2Underline>Work</H2Underline>
-      <div className="3xl:grid-cols-3 grid grid-cols-1 gap-12 pt-5 md:grid-cols-2">
+      <div className="3xl:grid-cols-3 grid grid-cols-1 gap-5 pt-5 md:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
