@@ -56,10 +56,6 @@ html {
   @apply antialiased;
 }
 
-h2 {
-  @apply uppercase-tight text-primary text-sm leading-none font-semibold;
-}
-
 p {
   @apply text-secondary text-base;
 }
