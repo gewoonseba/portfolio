@@ -7,15 +7,15 @@ interface IconButtonProps {
   onClick?: () => void;
 }
 
-export const IconButton = ({
+export default function IconButton({
   children,
   className,
   onClick,
-}: IconButtonProps) => {
+}: IconButtonProps) {
   return (
     <button
       className={classNames(
-        "flex size-10 shrink-0 items-center justify-center rounded-md transition-colors duration-150 hover:bg-btn-secondary-hover active:bg-btn-secondary-hover cursor-pointer",
+        "hover:bg-btn-secondary-hover active:bg-btn-secondary-hover flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-md transition-colors duration-150",
         className,
       )}
       onClick={onClick}
@@ -23,4 +23,4 @@ export const IconButton = ({
       {children}
     </button>
   );
-};
+}

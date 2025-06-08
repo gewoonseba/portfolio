@@ -1,10 +1,10 @@
 "use client";
 
+import ContactButton from "@/app/components/button/contact-button";
+import MenuButton from "@/app/components/button/menu-button";
 import NavLinks from "@/app/components/nav/nav-links";
-import { ContactButton } from "@/app/ui/button/contact-button";
-import { MenuButton } from "@/app/ui/button/menu-button";
-import SocialLinks from "@/app/ui/social-icons";
-import { WordMark } from "@/app/ui/wordmark";
+import SocialLinks from "@/app/components/social-icons";
+import { WordMark } from "@/app/components/wordmark";
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

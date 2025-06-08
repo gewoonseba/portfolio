@@ -1,11 +1,14 @@
-import { IconButton } from "@/app/ui/button/icon-button";
+import IconButton from "@/app/components/button/icon-button";
 
-interface MenuButtonProps {
+export default function MenuButton({
+  onClick,
+  isOpen,
+  className,
+}: {
   onClick?: () => void;
   isOpen: boolean;
   className?: string;
-}
-export const MenuButton = ({ onClick, isOpen, className }: MenuButtonProps) => {
+}) {
   return (
     <IconButton onClick={onClick} className={className}>
       <svg
@@ -52,4 +55,4 @@ export const MenuButton = ({ onClick, isOpen, className }: MenuButtonProps) => {
       </svg>
     </IconButton>
   );
-};
+}

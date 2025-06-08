@@ -1,6 +1,6 @@
 "use client";
 
-import VideoAutoPlayer from "@/app/ui/video-autoplayer";
+import VideoAutoPlayer from "@/app/components/video-autoplayer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,7 +19,7 @@ export type Project = {
 
 export function ProjectCard({ project }: { project: Project }) {
   const MediaContent = () => (
-    <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-md text-primary border-secondary">
+    <div className="text-primary border-secondary relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-md">
       {project.media.type === "image" ? (
         <Image
           src={project.media.src}
@@ -39,12 +39,12 @@ export function ProjectCard({ project }: { project: Project }) {
       <MediaContent />
       <div className="flex items-center justify-between">
         <h3 className="text-md text-primary">{project.title}</h3>
-                  <span className="uppercase tracking-tight text-secondary transition-all duration-150 text-base group-hover:underline">
+        <span className="text-secondary text-base tracking-tight uppercase transition-all duration-150 group-hover:underline">
           {project.type}{" "}
           {project.link || project.id === "smvd-refresh" ? "→" : ""}
         </span>
       </div>
-      <p className="tracking-tight text-base">
+      <p className="text-base tracking-tight">
         {project.year} · {project.company}
       </p>
     </>

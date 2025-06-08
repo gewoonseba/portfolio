@@ -1,20 +1,11 @@
-import React from "react";
-
-interface IconProps {
-  size?: number | string;
-  className?: string;
-}
-
-export function LinkedIn({ size = 24, className = "" }: IconProps) {
+export default function LinkedIn({ className }: { className?: string }) {
   return (
     <svg
-      width={size}
-      height={size}
       viewBox="0 0 24 24"
-      version="1.1"
-      className={`icon ${className}`}
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className || "size-6"}
     >
-      <title>icon / linkedin</title>
       <g
         id="icon-/-linkedin"
         stroke="none"

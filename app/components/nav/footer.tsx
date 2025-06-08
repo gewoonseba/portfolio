@@ -1,7 +1,7 @@
 "use client";
 
 import NavLinks from "@/app/components/nav/nav-links";
-import SocialLinks from "@/app/ui/social-icons";
+import SocialLinks from "@/app/components/social-icons";
 import classNames from "classnames";
 
 interface FooterProps {

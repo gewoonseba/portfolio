@@ -1,15 +1,16 @@
-import { IconButton } from "@/app/ui/button/icon-button";
+import IconButton from "@/app/components/button/icon-button";
 
-interface PlayButtonProps {
+export default function PlayButton({
+  onClick,
+  isPlaying,
+}: {
   onClick?: () => void;
   isPlaying: boolean;
-}
-
-export const PlayButton = ({ onClick, isPlaying }: PlayButtonProps) => {
+}) {
   return (
     <IconButton
       onClick={onClick}
-      className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
+      className="bg-black/50 backdrop-blur-sm hover:bg-black/70"
     >
       <svg
         width="20"
@@ -41,4 +42,4 @@ export const PlayButton = ({ onClick, isPlaying }: PlayButtonProps) => {
       </svg>
     </IconButton>
   );
-};
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayButton } from "@/app/ui/button/play-button";
+import PlayButton from "@/app/components/button/play-button";
 import { useEffect, useRef, useState } from "react";
 
 interface VideoAutoPlayerProps {
@@ -69,7 +69,7 @@ export default function VideoAutoPlayer({ src }: VideoAutoPlayerProps) {
         </video>
       </div>
       <div
-        className="absolute bottom-4 right-4"
+        className="absolute right-4 bottom-4"
         onClick={(e) => e.stopPropagation()} // Prevent double-triggering when clicking the button
       >
         <PlayButton onClick={togglePlayPause} isPlaying={isPlaying} />

@@ -1,7 +1,7 @@
 "use client";
 
+import { Project, ProjectCard } from "@/app/components/project-card";
 import H2Underline from "@/app/components/typography/h2-underline";
-import { Project, ProjectCard } from "@/app/ui/project-card";
 
 export const projects: Project[] = [
   {

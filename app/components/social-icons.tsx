@@ -1,6 +1,6 @@
-import { IconLink } from "@/app/ui/button/icon-link";
-import { Bluesky } from "@/app/ui/icons/bluesky";
-import { LinkedIn } from "@/app/ui/icons/linkedin";
+import IconLink from "@/app/components/button/icon-link";
+import Bluesky from "@/app/components/icons/bluesky";
+import LinkedIn from "@/app/components/icons/linkedin";
 import classNames from "classnames";
 
 export default function SocialLinks({ className }: { className?: string }) {
