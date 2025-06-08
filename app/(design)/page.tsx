@@ -26,7 +26,12 @@ export default function Design() {
           product designer who thinks strategically, crafts beautiful
           interfaces, and loves building what I design. I thrive in fast-paced
           environments where I can wear multiple hats. Currently at{" "}
-          <TextLink label="Smooved" href="https://www.smooved.be" />.{" "}
+          <TextLink
+            type="external"
+            label="Smooved"
+            href="https://www.smooved.be"
+          />
+          .{" "}
         </p>
       </ProseSection>
 
@@ -37,11 +42,16 @@ export default function Design() {
           Got a cool project in mind? Just want to geek out about design? Drop
           me a line at{" "}
           <TextLink
+            type="external"
             label="seba@gewoonseba.com"
             href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
           />{" "}
           or book a meeting with me on{" "}
-          <TextLink label="cal.com" href="https://cal.com/gewoonseba/30min" />
+          <TextLink
+            type="external"
+            label="cal.com"
+            href="https://cal.com/gewoonseba/30min"
+          />
         </p>
       </ProseSection>
     </div>
