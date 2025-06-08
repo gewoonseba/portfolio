@@ -1,17 +1,14 @@
 "use client";
 
-import { NavLinks } from "@/app/components/nav/nav-links";
-import { SocialLinks } from "@/app/ui/social-icons";
+import NavLinks from "@/app/components/nav/nav-links";
+import SocialLinks from "@/app/ui/social-icons";
 import classNames from "classnames";
-import { usePathname } from "next/navigation";
 
 interface FooterProps {
   className?: string;
 }
 
-export const Footer = ({ className }: FooterProps) => {
-  const pathname = usePathname();
-
+export default function Footer({ className }: FooterProps) {
   return (
     <footer
       className={classNames(
@@ -27,4 +24,4 @@ export const Footer = ({ className }: FooterProps) => {
       <SocialLinks className="md:justify-self-end" />
     </footer>
   );
-};
+}

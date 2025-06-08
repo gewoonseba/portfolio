@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 
 type NavLinksVariant = "default" | "mobile-menu";
 
-export const NavLinks = ({
+export default function NavLinks({
   className,
   onNavClicked,
   variant = "default",
@@ -12,7 +12,7 @@ export const NavLinks = ({
   className?: string;
   onNavClicked?: () => void;
   variant?: NavLinksVariant;
-}) => {
+}) {
   const paths = [
     { path: "/", label: "Design" },
     { path: "/photos", label: "Photos" },
@@ -58,4 +58,4 @@ export const NavLinks = ({
       ))}
     </nav>
   );
-};
+}

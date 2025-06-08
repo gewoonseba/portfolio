@@ -63,7 +63,3 @@ h2 {
 p {
   @apply text-secondary text-base;
 }
-
-section {
-  @apply py-4;
-}

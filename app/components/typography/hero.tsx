@@ -1,6 +1,6 @@
 "use client";
 
-import { AutoSizedText } from "../auto-sized-text";
+import { AutoSizedText } from "./auto-sized-text";
 
 export default function Hero() {
   return (

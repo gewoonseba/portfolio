@@ -10,7 +10,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function AutoSizedText({ children }: Props) {
+export default function AutoSizedText({ children }: Props) {
   const childRef = useRef<HTMLDivElement>(null);
 
   const fontSize = useRef<number>(0);
