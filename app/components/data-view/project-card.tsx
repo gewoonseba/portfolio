@@ -1,7 +1,7 @@
 "use client";
 
 import VideoAutoPlayer from "@/app/components/data-view/video-autoplayer";
-import TextLink from "@/app/components/typography/text-link";
+import TextLink from "@/app/components/nav/text-link";
 import Image from "next/image";
 import Link from "next/link";
 

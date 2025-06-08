@@ -1,7 +1,7 @@
 import Work from "@/app/(design)/work";
+import TextLink from "@/app/components/nav/text-link";
 import ProseSection from "@/app/components/sections/prose-section";
 import AutoSizedText from "@/app/components/typography/auto-sized-text";
-import TextLink from "@/app/components/typography/text-link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
