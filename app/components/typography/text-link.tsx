@@ -9,7 +9,7 @@ export default function TextLink({
 }) {
   return (
     <Link
-      className="hover:text-primary whitespace-nowrap underline decoration-dotted transition-all duration-150 hover:decoration-solid"
+      className="hover:text-primary whitespace-nowrap underline decoration-dotted underline-offset-2 transition-all duration-150 hover:decoration-solid"
       href={href}
       target="_blank"
       rel="noopener noreferrer"

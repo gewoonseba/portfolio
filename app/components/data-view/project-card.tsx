@@ -1,6 +1,7 @@
 "use client";
 
 import VideoAutoPlayer from "@/app/components/data-view/video-autoplayer";
+import NavButton from "@/app/components/nav/nav-button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,9 +40,18 @@ export function ProjectCard({ project }: { project: Project }) {
       <MediaContent />
       <div className="flex items-center justify-between pb-1">
         <h3 className="leading-none tracking-tight">{project.title}</h3>
-        <span className="text-secondary uppercase-tight text-sm leading-none transition-all duration-150 group-hover:underline">
-          {project.type} {project.link ? "↗" : ""}
-        </span>
+        {project.link ? (
+          <NavButton
+            label={project.type}
+            href={project.link}
+            direction="forward"
+            asSpan={true}
+          />
+        ) : (
+          <span className="text-secondary uppercase-tight text-sm leading-none">
+            {project.type}
+          </span>
+        )}
       </div>
       <p className="leading-none tracking-tight">
         {project.year} · {project.company}
