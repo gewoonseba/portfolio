@@ -12,7 +12,8 @@ export default function ProseSection({
   return (
     <section className={className}>
       {title && <H2Underline>{title}</H2Underline>}
-      <div className={`${title ? "mt-4" : ""} max-w-prose space-y-4`}>
+      {/* pt-3 for visual balance */}
+      <div className={`${title ? "pt-3" : ""} max-w-prose space-y-4`}>
         {children}
       </div>
     </section>

@@ -11,7 +11,7 @@ export const metadata = {
 export default function SmooveedUIRefreshPage() {
   return (
     <article>
-      <div className="py-10">
+      <div className="pt-10 pb-20">
         <AutoSizedText>
           <h1 className="heading-tighter">Mover Dashboard</h1>
         </AutoSizedText>
@@ -19,7 +19,7 @@ export default function SmooveedUIRefreshPage() {
       </div>
 
       {/* MARK: Content*/}
-      <div className="mx-auto grid grid-cols-1 gap-10 pb-12 md:grid-cols-[1fr_2fr]">
+      <div className="mx-auto grid grid-cols-1 gap-10 pb-20 md:grid-cols-[1fr_2fr]">
         <div className="space-y-10">
           <ProseSection title="TL;DR">
             <p>

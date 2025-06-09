@@ -1,5 +1,7 @@
+import TextLink from "@/app/components/nav/text-link";
+import ProseSection from "@/app/components/sections/prose-section";
+import AutoSizedText from "@/app/components/typography/auto-sized-text";
 import Image from "next/image";
-import Link from "next/link";
 
 export const metadata = {
   title: "Partycam | Gewoon Seba",
@@ -9,114 +11,85 @@ export const metadata = {
 
 export default function PartycamPage() {
   return (
-    <article className="max-w-none pb-10">
-      <div className="py-10">
-        <Link
-          href="/"
-          className="text-secondary hover:text-primary relative z-10 text-base tracking-tight uppercase transition-all duration-150 hover:underline"
-        >
-          ← Back to overview
-        </Link>
-        <h1 className="w-fit max-w-7xl text-[10rem] leading-[0.8] font-semibold 2xl:-ml-4">
-          PartyCam
-        </h1>
-        <p className="text-secondary text-xl tracking-tight uppercase">
-          Personal
-        </p>
+    <article>
+      <div className="pt-10 pb-20">
+        <AutoSizedText>
+          <h1 className="heading-tighter">PartyCam</h1>
+        </AutoSizedText>
+        <p className="text-secondary uppercase-tight text-right">Personal</p>
       </div>
 
       {/* MARK: Content*/}
-      <div className="flex flex-row justify-start pb-12">
-        <div className="grid max-w-screen-lg gap-10 py-10 md:grid-cols-[1fr,2fr]">
-          <div className="6 flex max-w-prose flex-col gap-10 pb-12 md:pb-0">
-            <section>
-              <h2 className="border-secondary border-b pb-2">TL;DR</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  A web app that allows guests to share pictures on the big
-                  screen at the party. Build with Next.js, Supabase and
-                  Tailwind.
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">Role</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  Product Designer <br />
-                  Engineer
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">
-                Tools & Technologies
-              </h2>
-              <div className="mt-4 grid grid-cols-2 items-start gap-6">
-                <p>
-                  Figma <br />
-                  Cursor <br />
-                  Next.js <br />
-                </p>
-                <p>
-                  Tailwind <br />
-                  Supabase <br />
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">Timeline</h2>
-              <div className="mt-4 space-y-4">
-                <p>Early 2025</p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">Links</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  <Link
-                    className="hover:text-primary whitespace-nowrap transition-all duration-150 hover:underline"
-                    href="https://github.com/gewoonseba/party-cam"
-                  >
-                    GitHub ↗
-                  </Link>
-                </p>
-              </div>
-            </section>
-          </div>
-          <div className="flex max-w-prose flex-col gap-10">
-            <section>
-              <h2 className="border-secondary border-b pb-2">Context</h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  For my thirtieth birthday, I hosted a party with some friends.
-                  To make it special, I created PartyCam, a web app that allows
-                  guests to share pictures and quotes with everyone at the
-                  party. By scanning a QR code, guests could upload pictures
-                  that would then be displayed on a big screen.
-                </p>
-              </div>
-            </section>
-            <section>
-              <h2 className="border-secondary border-b pb-2">
-                Technical Setup
-              </h2>
-              <div className="mt-4 space-y-4">
-                <p>
-                  The application is built in Next.js, using Supabase as
-                  authentication provider, database and blob storage. The
-                  selection of pictures was random, but more recent uploads had
-                  a higher weight, increasing their chances of being chosen.
-                </p>
-                <p>I used Tailwind as the CSS framework.</p>
-              </div>
-            </section>
-          </div>
+      <div className="mx-auto grid grid-cols-1 gap-10 pb-20 md:grid-cols-[1fr_2fr]">
+        <div className="space-y-10">
+          <ProseSection title="TL;DR">
+            <p>
+              A web app that allows guests to share pictures on the big screen
+              at the party. Built with Next.js, Supabase and Tailwind.
+            </p>
+          </ProseSection>
+
+          <ProseSection title="Role">
+            <p>
+              Product Designer <br />
+              Engineer
+            </p>
+          </ProseSection>
+
+          <ProseSection title="Tools & Technologies">
+            <div className="grid grid-cols-2 gap-4">
+              <p>
+                Figma <br />
+                Cursor <br />
+                Next.js
+              </p>
+              <p>
+                Tailwind <br />
+                Supabase
+              </p>
+            </div>
+          </ProseSection>
+
+          <ProseSection title="Timeline">
+            <p>Early 2025</p>
+          </ProseSection>
+
+          <ProseSection title="Links">
+            <p>
+              <TextLink
+                type="external"
+                label="GitHub"
+                href="https://github.com/gewoonseba/party-cam"
+              />
+            </p>
+          </ProseSection>
+        </div>
+
+        <div className="space-y-10">
+          <ProseSection title="Context">
+            <p>
+              For my thirtieth birthday, I hosted a party with some friends. To
+              make it special, I created PartyCam, a web app that allows guests
+              to share pictures and quotes with everyone at the party. By
+              scanning a QR code, guests could upload pictures that would then
+              be displayed on a big screen.
+            </p>
+          </ProseSection>
+
+          <ProseSection title="Technical Setup">
+            <p>
+              The application is built in Next.js, using Supabase as
+              authentication provider, database and blob storage. The selection
+              of pictures was random, but more recent uploads had a higher
+              weight, increasing their chances of being chosen.
+            </p>
+            <p>I used Tailwind as the CSS framework.</p>
+          </ProseSection>
         </div>
       </div>
 
       {/* MARK: Images */}
-      <div className="grid grid-cols-1 grid-rows-6 gap-6 pb-12 md:grid-cols-3 md:grid-rows-3">
+      <div className="grid grid-cols-1 grid-rows-6 gap-2 md:grid-cols-3 md:grid-rows-3">
         <div className="bg-btn-secondary-hover border-secondary relative aspect-square overflow-hidden rounded-md border md:col-span-2 md:aspect-auto">
           <Image
             src="/img/design/partycam/partycam-01.png"

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Design() {
   return (
     <div className="w-full space-y-10">
-      <section>
+      <section className="pt-10 pb-20">
         <AutoSizedText>
           <h1 className="heading-tighter">Gewoon Seba.</h1>
         </AutoSizedText>
