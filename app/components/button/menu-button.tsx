@@ -1,12 +1,16 @@
-import { IconButton } from "@/app/ui/button/icon-button";
+import IconButton from "@/app/components/button/icon-button";
 
-interface MenuButtonProps {
+export default function MenuButton({
+  onClick,
+  isOpen,
+  className,
+}: {
   onClick?: () => void;
   isOpen: boolean;
-}
-export const MenuButton = ({ onClick, isOpen }: MenuButtonProps) => {
+  className?: string;
+}) {
   return (
-    <IconButton onClick={onClick}>
+    <IconButton onClick={onClick} className={className}>
       <svg
         width="24px"
         height="24px"
@@ -51,4 +55,4 @@ export const MenuButton = ({ onClick, isOpen }: MenuButtonProps) => {
       </svg>
     </IconButton>
   );
-};
+}

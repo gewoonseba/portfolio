@@ -1,6 +1,7 @@
 "use client";
 
-import VideoAutoPlayer from "@/app/ui/video-autoplayer";
+import VideoAutoPlayer from "@/app/components/data-view/video-autoplayer";
+import TextLink from "@/app/components/nav/text-link";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -19,13 +20,13 @@ export type Project = {
 
 export function ProjectCard({ project }: { project: Project }) {
   const MediaContent = () => (
-    <div className="relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-1 shadow-border">
+    <div className="border-secondary relative mb-4 aspect-[4/3] w-full overflow-hidden rounded-md border">
       {project.media.type === "image" ? (
         <Image
           src={project.media.src}
           alt={project.title}
           fill
-          className="bg-neutral-800 object-cover"
+          className="bg-secondary object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       ) : (
@@ -37,14 +38,23 @@ export function ProjectCard({ project }: { project: Project }) {
   const Content = () => (
     <>
       <MediaContent />
-      <div className="flex items-center justify-between">
-        <h3 className="~text-base/md">{project.title}</h3>
-        <span className="uppercase tracking-tight text-neutral-200 transition-all duration-150 ~text-sm/base group-hover:underline">
-          {project.type}{" "}
-          {project.link || project.id === "smvd-refresh" ? "→" : ""}
-        </span>
+      <div className="flex items-center justify-between pb-1">
+        <h3 className="leading-none tracking-tight">{project.title}</h3>
+        {project.link ? (
+          <TextLink
+            type="forward"
+            label={project.type}
+            href={project.link}
+            asSpan={true}
+            className="group-hover:text-primary text-sm group-hover:decoration-solid"
+          />
+        ) : (
+          <span className="text-secondary uppercase-tight text-sm leading-none">
+            {project.type}
+          </span>
+        )}
       </div>
-      <p className="tracking-tight ~text-sm/base">
+      <p className="leading-none tracking-tight">
         {project.year} · {project.company}
       </p>
     </>

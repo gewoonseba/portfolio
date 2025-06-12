@@ -1,3 +1,4 @@
+import AutoSizedText from "@/app/components/typography/auto-sized-text";
 import verkeer from "@/public/img/noord/sebastian-stoelen-002.jpg";
 import wash from "@/public/img/noord/sebastian-stoelen-005.jpg";
 import bxl from "@/public/img/noord/sebastian-stoelen-007.jpg";
@@ -23,147 +24,154 @@ export const metadata: Metadata = {
 };
 export default function Photos() {
   return (
-    <section className="grid grid-cols-1 items-center gap-4 ~py-4/10 md:grid-cols-3">
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={station}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={auto}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={fre}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+    <>
+      <section className="pt-10 pb-20">
+        <AutoSizedText>
+          <h1 className="heading-tighter">Photos</h1>
+        </AutoSizedText>
+      </section>
+      <section className="grid grid-cols-1 items-center gap-2 md:grid-cols-3">
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={station}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={auto}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={fre}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={okn}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={okn}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={plant}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={grg}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={plant}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={grg}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={bxl}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={bxl}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={bxl1}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={bxl2}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={bxl1}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={bxl2}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div className="col-span-1 w-full rounded-1 md:col-span-2">
-        <Image
-          className="h-full w-full rounded-1 object-cover object-top"
-          src={verkeer}
-          alt=""
-          placeholder="blur"
-          style={{ aspectRatio: "3.08  / 1" }}
-        ></Image>
-      </div>
+        <div className="col-span-1 w-full rounded-md md:col-span-2">
+          <Image
+            className="h-full w-full rounded-md object-cover object-top"
+            src={verkeer}
+            alt=""
+            placeholder="blur"
+            style={{ aspectRatio: "3.08 / 1" }}
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={bxl3}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={bxl3}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={bxl4}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={bxl4}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div className="col-span-1 w-full rounded-1 md:col-span-2">
-        <Image
-          className="h-full w-full rounded-1 object-cover object-top"
-          src={wash}
-          alt=""
-          placeholder="blur"
-          style={{ aspectRatio: "3.08  / 1" }}
-        ></Image>
-      </div>
+        <div className="col-span-1 w-full rounded-md md:col-span-2">
+          <Image
+            className="h-full w-full rounded-md object-cover object-top"
+            src={wash}
+            alt=""
+            placeholder="blur"
+            style={{ aspectRatio: "3.08 / 1" }}
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={service}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={service}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
 
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={brief}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-      <div>
-        <Image
-          className="h-auto max-w-full rounded-1"
-          src={kbt}
-          alt=""
-          placeholder="blur"
-        ></Image>
-      </div>
-    </section>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={brief}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
+        <div>
+          <Image
+            className="h-auto max-w-full rounded-md"
+            src={kbt}
+            alt=""
+            placeholder="blur"
+          ></Image>
+        </div>
+      </section>
+    </>
   );
 }

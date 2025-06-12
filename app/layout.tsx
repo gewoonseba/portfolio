@@ -1,5 +1,5 @@
-import { Footer } from "@/app/ui/footer";
-import Navbar from "@/app/ui/navbar";
+import Footer from "@/app/components/nav/footer";
+import Navbar from "@/app/components/nav/navbar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -24,10 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${interLocal.variable}`}>
-      <body className="min-h-dvh max-w-screen-3xl text-base ~px-2/5 3xl:mx-auto">
+      <body className="max-w-screen-3xl text-primary bg-primary 3xl:mx-auto min-h-dvh px-5 text-base">
         <Navbar />
         <main>{children}</main>
-        <Footer className="sticky top-full" />
+        <Footer className="sticky top-full mt-10" />
         <SpeedInsights />
         <Analytics />
       </body>

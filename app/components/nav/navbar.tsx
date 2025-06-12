@@ -1,0 +1,124 @@
+"use client";
+
+import ContactButton from "@/app/components/button/contact-button";
+import MenuButton from "@/app/components/button/menu-button";
+import { WordMark } from "@/app/components/icons/wordmark";
+import NavLinks from "@/app/components/nav/nav-links";
+import SocialLinks from "@/app/components/nav/social-icons";
+import classNames from "classnames";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
+
+export interface NavbarProps {
+  className?: string;
+}
+
+export default function Navbar({ className }: NavbarProps) {
+  const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Responsive transitions (for desktop nav items)
+  const slideInTransition = classNames(
+    "transition-all duration-300",
+    "translate-y-8 opacity-0 blur-md",
+    "md:translate-y-0 md:opacity-100 md:blur-none md:starting:translate-y-8 md:starting:opacity-0 md:starting:blur-md",
+  );
+
+  const slideOutTransition = classNames(
+    "transition-all duration-300",
+    "translate-y-0 opacity-100 blur-none",
+    "md:translate-y-8 md:opacity-0 md:blur-md md:starting:translate-y-0 md:starting:opacity-100 md:starting:blur-none",
+  );
+
+  // State-based transitions (for mobile menu items)
+  const mobileMenuTransition = classNames(
+    "transition-all duration-300",
+    "starting:translate-y-8 starting:opacity-0 starting:blur-md",
+    isMenuOpen
+      ? "translate-y-0 opacity-100 blur-none"
+      : "-translate-y-8 opacity-0 blur-md",
+  );
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = useCallback(() => setIsMenuOpen(false), [setIsMenuOpen]);
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (html) html.classList.toggle("overflow-hidden", isMenuOpen);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    window.addEventListener("orientationchange", closeMenu);
+    window.addEventListener("resize", closeMenu);
+
+    return () => {
+      window.removeEventListener("orientationchange", closeMenu);
+      window.removeEventListener("resize", closeMenu);
+    };
+  }, [closeMenu]);
+
+  return (
+    <header className={classNames("sticky top-0 z-50 h-18 py-2")}>
+      <div
+        className={classNames(
+          "flex flex-col items-start overflow-hidden",
+          "bg-primary/80 border-secondary rounded-xl border backdrop-blur-lg",
+          "transition-all duration-300 ease-in-out",
+          isMenuOpen ? "h-[calc(100dvh-2rem)]" : "h-14",
+        )}
+      >
+        <div className="flex h-14 w-full shrink-0 justify-between">
+          <div className="mt-2 ml-5 flex h-10 items-center">
+            <Link href="/" onClick={closeMenu}>
+              <WordMark className="text-primary h-5 pr-10 md:pr-0" />
+            </Link>
+          </div>
+          <NavLinks
+            className={classNames("hidden md:flex", slideInTransition)}
+          />
+          <div
+            className={classNames(
+              "absolute top-2 right-2 block",
+              slideOutTransition,
+            )}
+          >
+            <MenuButton
+              onClick={() => toggleMenu()}
+              isOpen={isMenuOpen}
+              className="text-primary"
+            />
+          </div>
+          <ContactButton
+            className={classNames(
+              "my-auto mr-5 hidden md:block",
+              slideInTransition,
+            )}
+          />
+        </div>
+
+        {/* MARK: Mobile Menu */}
+        <div
+          className={classNames(
+            "flex w-full flex-grow flex-col justify-between py-4 pr-2 pl-5",
+          )}
+        >
+          <NavLinks
+            onNavClicked={toggleMenu}
+            variant="mobile-menu"
+            className={mobileMenuTransition}
+          />
+          <div
+            className={classNames(
+              "flex items-center justify-between",
+              mobileMenuTransition,
+            )}
+          >
+            <ContactButton className={mobileMenuTransition} />
+            <SocialLinks className={mobileMenuTransition} />
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
