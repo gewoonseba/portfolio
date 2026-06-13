@@ -22,8 +22,7 @@ export default function Design() {
         <p>
           <span className="text-primary">Hey! I&apos;m Seba</span> – I&apos;m a
           product engineer and designer. I think strategically, design beautiful
-          interfaces, and love building what I design. Since November 2025,
-          I&apos;ve been working at{" "}
+          interfaces, and love building what I design. Currently at{" "}
           <TextLink
             type="external"
             label="Companion.energy"
