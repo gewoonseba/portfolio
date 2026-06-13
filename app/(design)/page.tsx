@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Gewoon Seba | Design",
-  description: "Designer with a soft spot for code.",
+  description: "Product engineer with a soft spot for design.",
 };
 
 export default function Design() {
@@ -21,13 +21,13 @@ export default function Design() {
       <ProseSection>
         <p>
           <span className="text-primary">Hey! I&apos;m Seba</span> – I&apos;m a
-          product designer who thinks strategically, crafts beautiful
-          interfaces, and loves building what I design. I thrive in fast-paced
-          environments where I can wear multiple hats. Currently at{" "}
+          product engineer and designer. I think strategically, design beautiful
+          interfaces, and love building what I design. Since November 2025,
+          I&apos;ve been working at{" "}
           <TextLink
             type="external"
-            label="Smooved"
-            href="https://www.smooved.be"
+            label="Companion.energy"
+            href="https://companion.energy/"
           />
           .{" "}
         </p>
@@ -43,12 +43,6 @@ export default function Design() {
             type="external"
             label="seba@gewoonseba.com"
             href="mailto:seba@gewoonseba.com?subject=Hi%20👋"
-          />{" "}
-          or book a meeting with me on{" "}
-          <TextLink
-            type="external"
-            label="cal.com"
-            href="https://cal.com/gewoonseba/30min"
           />
         </p>
       </ProseSection>
