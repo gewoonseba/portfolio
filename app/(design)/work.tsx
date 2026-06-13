@@ -41,10 +41,10 @@ export const projects: Project[] = [
   },
   {
     id: "smvd-companion",
-    title: "Entering meter info",
-    type: "Prototype",
-    year: 2024,
-    company: "Smooved",
+    title: "Companion.energy platform",
+    type: "Product Engineering",
+    year: 2026,
+    company: "Companion.energy",
     media: {
       type: "video",
       src: "/img/design/companion.mp4",
